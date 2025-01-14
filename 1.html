@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 </title>
+</head>
+<body>
+    <style>
+        div{
+            width: 200px;
+            height: 20px;
+        }
+        h2 {
+            margin-top: 70px;
+        }
+    </style>
+    <section>
+        <h2>
+            task_1</h2>
+            <input type="text" id="task_1" placeholder="Ваше имя">
+            <button onclick="task_1()">
+                 Показать ответ
+            </button>
+            <div><p id="task-1"></p></div>
+        
+    </section>
+    <section>
+        <h2>
+            task_2</h2>
+            <input type="number" id="task_2" placeholder="Год вашего рождение">
+            <button onclick="task_2()">
+                 Показать ответ
+            </button>
+            <div><p id="task-2"></p></div>
+        
+    </section>
+    <section>
+        <h2>
+            task_3</h2>
+            <input type="number" id="task_3" placeholder="Длина квадрата">
+            <button onclick="task_3()">
+                 Показать ответ
+            </button>
+            <div><p id="task-3"></p></div>
+        
+    </section>
+    <section>
+        <h2>
+            task_4</h2>
+            <input type="number" id="task_4" placeholder="Радиус окружности">
+            <button onclick="task_4()">
+                Показать ответ
+            </button>
+        
+            <div><p id="task-4"></p></div>
+    </section>
+    <section>
+        <h2>
+            task_5</h2>
+            <input type="number" id="task_5" placeholder="Растояние между городами">
+            <input type="number" id="task_5_1" placeholder="Время чтобы добраться">
+            <button onclick="task_5()">
+                 Показать ответ
+            </button>
+            <div><p id="task-5"></p></div>
+        
+    </section>
+    <section>
+        <h2>
+            task_6</h2>
+            <input type="number" id="task_6" placeholder="Сумма для конвертаций">
+            <button onclick="task_6()">
+                 Показать ответ
+            </button>
+            <div><p id="task-6"></p></div>
+        
+    </section>
+    <section>
+        <h2>
+            task_7</h2>
+            <input type="number" id="task_7" placeholder="Объем вашей памяти в гб">
+            <button onclick="task_7()">
+                 Показать ответ
+            </button>
+            <div><p id="task-7"></p></div>
+        
+    </section>
+    <section>
+        <h2>
+            task_8</h2>
+            <input type="number" id="task_8" placeholder="Сумма денег в кошельке">
+            <input type="number" id="task_8_1" placeholder="Стоимость шоколада">
+            <button onclick="task_8()">
+                 Показать ответ
+            </button>
+            <div><p id="task-8"></p></div>
+        
+    </section>
+    <section>
+        <h2>
+            task_9</h2>
+            <input type="number" id="task_9" placeholder="Число задом на перед">
+            <button onclick="task_9()">
+                 Показать ответ
+            </button>
+            <div><p id="task-9"></p></div>
+        
+    </section>
+
+    <script>
+
+        // task 1
+
+        function task_1() {
+            let Element = document.getElementById('task_1');
+            let Value = Element.value;
+            document.getElementById('task-1').textContent = 'Привет! ' + Value;
+        }
+
+        // task 2
+        function task_2() {
+            let inputElement = document.getElementById('task_2');
+            let inputValue = inputElement.value;
+            let age;
+            const this_year=2024;
+            age=this_year-inputValue;
+            document.getElementById('task-2').textContent = 'Вам ' + age + ' лет';
+        }
+        // task 3
+
+        function task_3() {
+            let Element = document.getElementById('task_3');
+            let Value = Element.value;
+            P=Value*4;
+            document.getElementById('task-3').textContent = 'Пириметр квадрата  ' + P;
+        }
+        // task 4
+
+        function task_4() {
+            let Element = document.getElementById('task_4');
+            let r = Element.value;
+            S=3.14*r*r;
+            document.getElementById('task-4').textContent = 'Площадь вашей окружности ' + S;
+        }
+        // task 5\\
+
+        function task_5() {
+            let Element = document.getElementById('task_5');
+            let Element1 = document.getElementById('task_5_1');
+            let s = Element.value;
+            let t = Element1.value;
+            let v;
+            v=s/t;
+            document.getElementById('task-5').textContent = 'Скорость с которой следует передвигаться ' + v + 'км/ч';
+        }
+        // task 6
+
+        function task_6() {
+            let Element = document.getElementById('task_6');
+            let summ = Element.value;
+            const usd = 0.92;
+            let eur;
+            eur=summ*usd;
+            document.getElementById('task-6').textContent = 'Сумма в евро ' + eur;
+        }
+        // task 7
+
+        function task_7() {
+            let Element = document.getElementById('task_7');
+            let memory = parseInt(Element.value);
+            let fail;
+            fail=parseInt(memory*1024/820);
+            document.getElementById('task-7').textContent = fail +' файла может вместиться в ваш память ' ;
+        }
+        // task 8
+
+        function task_8() {
+            let Element = document.getElementById('task_8');
+            let summ = parseInt(Element.value);
+            let Element1 = document.getElementById('task_8_1');
+            let price = parseInt(Element1.value);
+            chokolade=parseInt(summ/price);
+            change=summ % price;
+            document.getElementById('task-8').textContent = chokolade+ " шоколадок можно купить и останется " +change;
+        }
+        // task 9
+
+        function task_9() {
+            let Element = document.getElementById('task_9');
+            let summ = Element.value;
+            let hundred=parseInt(summ/100);
+            let ten=parseInt((summ%100)/10);
+            let one=(summ%100)%10;
+            document.getElementById('task-9').textContent = '' + one + ten + hundred;
+        }
+
+
+
+    </script>
+    <h2>
+        код на c++
+    </h2>
+    <pre>
+    #include <iostream>
+    using namespace std;
+    
+    int main() {
+        int age;
+        cout << "введите свой возраст: ";
+        cin >> age;
+        cout << "вам " << age << " лет";
+    }
+    
+    task 1
+
+    int main() {
+        string name;
+        cout << "введите свое имя: ";
+        cin >> name;
+        cout << "привет! " << name;
+    }
+
+    task 2
+    
+    int main() {
+        const float this_year = 2024;
+        float age;
+        float his_year;
+        cout << "введите свой год рождения: ";
+        cin >> his_year;
+        age = this_year - his_year;
+        cout << "вам " << age << " лет";
+    }
+
+    task 3
+    
+    int main() {
+        float square;
+        float P;
+        cout << "длина квадрата: ";
+        cin >> square;
+        P = square * 4;
+        cout << "периметр квадрата: " << P;
+    }
+
+    task 4
+    
+    int main() {
+        float r;
+        float S;
+        cout << "радиус окружности: ";
+        cin >> r;
+        S = 3.14 * r * r;
+        cout << "площадь окружности: " << S;
+    }
+
+    task 5
+    
+    int main() {
+        float s;
+        float t;
+        float v;
+        cout << "расстояние между городами в метрах: ";
+        cin >> s;
+        cout << "время, за которое нужно пройти в секундах: ";
+        cin >> t;
+        v = s / t;
+        cout << "скорость, которую вы должны соблюдать: " << v << " м/с";
+    }
+
+    task 6
+    
+    int main() {
+        const float usd = 0.92;
+        float summ;
+        float eur;
+        cout << "сколько долларов нужно конвертировать в евро: ";
+        cin >> summ;
+        eur = summ * usd;
+        cout << "у вас: " << eur << " евро";
+    }
+
+    task 7
+    
+    int main() {
+        float memory;
+        int fail;
+        cout << "укажите сколько у вас ГБ: ";
+        cin >> memory;
+        fail = memory * 1024 / 820;
+        cout << fail << " файла может вместиться в вашу память";
+    }
+
+    task 8
+    
+    int main() {
+        int summ;
+        int price;
+        int chocolate;
+        int change;
+        cout << "сколько у вас денег: ";
+        cin >> summ;
+        cout << "сколько стоит шоколадка: ";
+        cin >> price;
+        chocolate = summ / price;
+        change = summ % price;
+        cout << chocolate << " шоколадок можно купить и останется " << change;
+    }
+
+    task 9 
+    
+    int main() {
+        int summ;
+        int hundred;
+        int ten;
+        int one;
+        cout << "введите сумму, которая выведется задом наперед: ";
+        cin >> summ;
+        hundred = summ / 100;
+        ten = (summ % 100) / 10;
+        one = (summ % 100) % 10;
+        cout << one << ten << hundred;
+    }
+    
+    </pre>
+
+</body>
+</html>

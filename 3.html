@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <style>
+            div{
+                width: 200px;
+                height: 20px;
+            }
+            h2 {
+                margin-top: 70px;
+            }
+        </style>
+        <section>
+            <h2>
+                task_6; Запросить у пользователя номер месяца и вывести на экран
+                его название.</h2>
+                <input type="number" id="task_6" placeholder="какой месяц">
+                <button onclick="task_6()">
+                     Показать ответ
+                </button>
+                <div><p id="task-6"></p></div>
+            
+        </section>
+        <section>
+            <h2>
+                task_7; Реализовать калькулятор. Пользователь вводит 2 числа и
+                знак (+ - * /). В зависимости от введенного знака решить
+                пример и вывести результат.</h2>
+                <input type="number" id="task_7" placeholder="1 число">
+                <input type="number" id="task_7-1" placeholder="2 число">
+                <input type="name" id="task_7-2" placeholder="знак">
+                <button onclick="task_7()">
+                     Показать ответ
+                </button>
+                <div><p id="task-7"></p></div>
+            
+        </section>
+        <section>
+            <h2>
+                task_8; Запросить 2 числа и вывести большее из них.</h2>
+                <input type="number" id="task_8" placeholder="1 числое">
+                <input type="number" id="task_8-1" placeholder="2 число">
+                <button onclick="task_8()">
+                     Показать ответ
+                </button>
+                <div><p id="task-8"></p></div>
+            
+        </section>
+        <section>
+            <h2>
+                task_9; Запросить 1 число и проверить, оно кратно 5 или нет.</h2>
+                <input type="number" id="task_9" placeholder="1 число">
+                <button onclick="task_9()">
+                     Показать ответ
+                </button>
+                <div><p id="task-9"></p></div>
+            
+        </section>
+        
+        <section>
+            <h2>
+                task_10; Запросить у пользователя название планеты. Если пользователь ввел ≪Земля≫ или ≪земля≫, то вывести ≪Привет, землянин!≫, в остальных случаях вывести ≪Привет, инопланетянин!≫.</h2>
+                <input type="name" id="task_10" placeholder="planet">
+                <button onclick="task_10()">
+                     Показать ответ
+                </button>
+                <div><p id="task-10"></p></div>
+            
+        </section>
+    
+        <script>
+    
+            // task 6
+    
+            function task_6() {
+            //здесь лучше использовать массив
+            let Element = Number(document.getElementById('task_6').value);
+            switch (Element) {
+                case 1:document.getElementById('task-6').textContent = 'январь';
+                break;
+                case 2:document.getElementById('task-6').textContent = 'февраль';
+                break;
+                case 3:document.getElementById('task-6').textContent = 'март';
+                break;
+                case 4:document.getElementById('task-6').textContent = 'апрель';
+                break;
+                case 5:document.getElementById('task-6').textContent = 'май';
+                break;
+                case 6:document.getElementById('task-6').textContent = 'июнь';
+                break;
+                case 7:document.getElementById('task-6').textContent = 'июль';
+                break;
+                case 8:document.getElementById('task-6').textContent = 'август';
+                break;
+                case 9:document.getElementById('task-6').textContent = 'сентябрь';
+                break;
+                case 10:document.getElementById('task-6').textContent = 'октябрь';
+                break;
+                case 11:document.getElementById('task-6').textContent = 'ноябрь';
+                break;
+                case 12:document.getElementById('task-6').textContent = 'декабрь';
+                break;
+                default:document.getElementById('task-6').textContent = 'чувак, месяцов всего 12';
+                break;
+            }
+        }
+            // task 7
+    
+            function task_7() {
+                let num1 = document.getElementById('task_7').value;
+                let num2 = document.getElementById('task_7-1').value;
+                let znak = document.getElementById('task_7-2').value;
+                switch (znak){
+                    case '+':document.getElementById('task-7').textContent = num1 + num2;
+                    break;
+                    case '-':document.getElementById('task-7').textContent = num1 - num2;
+                    break;
+                    case '*':document.getElementById('task-7').textContent = num1 * num2;
+                    break;
+                    case '/':document.getElementById('task-7').textContent = num1 / num2;
+                    break;
+                    default:document.getElementById('task-7').textContent = 'знак (+ - * /)';
+                    break;
+                }
+                
+            }
+            // task 8
+    
+            function task_8() {
+                let num1 = document.getElementById('task_8').value;
+                let num2 = document.getElementById('task_8-1').value;
+                document.getElementById('task-8').textContent = ((num1 > num2) ? num1 : num2);
+            }
+            // task 9
+    
+            function task_9() {
+                let Element = document.getElementById('task_9').value;
+                let summ = Element%5;
+                document.getElementById('task-9').textContent = ((summ == 0) ? "yes" : "no");
+            }
+
+            // task 10
+    
+            function task_10() {
+                let Element = document.getElementById('task_10').value;
+                document.getElementById('task-10').textContent =  (Element === 'Земля' || Element === 'земля' ? "Привет, землянин!" : 'Привет, инопланетянин!');
+            }
+    
+    
+    
+        </script>
+        <pre>
+            // Online C++ compiler to run C++ program online
+            #include <iostream>
+                using namespace std;
+           
+            // 6 task
+            // int main() {
+            //     int num;
+            //     cout<<"число";
+            //     cin>>num;
+            // switch (num) {
+            //                 case 1:cout<<"январь";
+            //                 break;
+            //                 case 2:cout<<"февраль";
+            //                 break;
+            //                 case 3:cout<<"март";
+            //                 break;
+            //                 case 4:cout<<"апрель";
+            //                 break;
+            //                 case 5:cout<<"май";
+            //                 break;
+            //                 case 6:cout<<"июнь";
+            //                 break;
+            //                 case 7:cout<<"июль";
+            //                 break;
+            //                 case 8:cout<<"август";
+            //                 break;
+            //                 case 9:cout<<"сентябрь";
+            //                 break;
+            //                 case 10:cout<<"октябрь";
+            //                 break;
+            //                 case 11:cout<<"ноябрь";
+            //                 break;
+            //                 case 12:cout<<"декабрь";
+            //                 break;
+            //                 default:cout<<"чувак, месяцов всего 12";
+            //                 break;
+            //             }
+                
+            // }
+            
+            // 7 task
+            int main() {
+                int num1, num2;
+                cout<<"число";
+                cin>>num1;
+                cout<<"число";
+                cin>>num2;
+                char znak;
+                cout<<"znak";
+                cin>>znak;
+            switch (znak){
+                                case '+':cout<< num1 + num2;
+                                break;
+                                case '-':cout<< num1 - num2;
+                                break;
+                                case '*':cout<< num1 * num2;
+                                break;
+                                case '/':cout<< num1 / num2;
+                                break;
+                                default:cout<< "знак (+ - * /)";
+                                break;
+                            }
+            }
+            
+            // 8 task
+            // int main() {
+            //     int num;
+            //     cout<<"число";
+            //     cin>>num;
+            // document.getElementById("task-8").textContent = ((num1 > num2) ? num1 : num2);
+            // }
+            // 9 task
+            // int main() {
+            //     int num;
+            //     cout<<"число";
+            //     cin>>num;
+            // document.getElementById("task-9").textContent = ((summ==0) ? yes : no);
+            // }
+            
+            // 10 task
+            // int main() {
+            //     int num;
+            //     cout<<"число";
+            //     cin>>num;
+            // document.getElementById("task-10").textContent =  (Element === "Земля" || Element === "земля" ? "Привет, землянин!" : "Привет, инопланетянин!");;
+            // }
+        </pre>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <style>
+        div {
+            width: 200px;
+            height: 20px;
+        }
+    </style>
+    <section>
+        <h2>
+            task_1.Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).</h2>
+        <input type="number" id="task_1" placeholder="ваш возраст">
+        <button onclick="task_1()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-1"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_2.Запросить у пользователя число от 0 до 9 и вывести ему спецсимвол, который расположен на этой клавише (1–!, 2–@, 3–# и т. д).</h2>
+        <input type="number" id="task_2" placeholder="введи цифру">
+        <button onclick="task_2()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-2"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_3.Написать конвертор валют. Пользователь вводит количество KZT, выбирает, в какую валюту хочет перевести: EUR, USD или UAN, и получает в ответ соответствующую сумму.</h2>
+        <input type="number" id="task_3" placeholder="сколько тенге">
+        <button onclick="task_3()">
+            EUR
+        </button>
+        <button onclick="task_3_1()">
+            USD
+        </button>
+        <button onclick="task_3_2()">
+            UAN
+        </button>
+        <div>
+            <p id="task-3"></p>
+        </div>
+
+    </section>
+
+    <section>
+        <h2>C++</h2>
+        <pre>
+            #include <iostream>
+                #include <cmath> // Для round
+                using namespace std;
+                
+                
+                // 1 task
+                int main() {
+                    int age;
+                    cout << "введи возраст";
+                    cin >> age;
+                    if (age >= 0) {
+                        if (age >= 0 && 12 >= age) {
+                                    cout << " вы являетесь ребенком";
+                
+                                }
+                                else if (age > 12 && age < 18) {
+                                    cout << " вы являетесь подростком ";
+                
+                                }
+                                else if (age > 18 && age < 60) {
+                                    cout << " вы являетесь взрослым ";
+                
+                                }
+                                else if (age >= 60) {
+                                    cout << " вы являетесь пенсионером  ";
+                
+                                }
+                
+                            }
+                            else {
+                                cout << "вы ещё не родились ";
+                
+                            }
+                        }
+                
+                    //     // task 2
+                        int task_2() {
+                            int cifre;
+                            cout << "";
+                            cin >> age;
+                            switch (cifre) {
+                                case "0" :cout <<  ")";
+                                break;
+                                case "1" :cout <<  "!";
+                                break;
+                                case "2" :cout <<  "@";
+                                break;
+                                case "3" :cout <<  "#";
+                                break;
+                                case "4" :cout <<  "$";
+                                break;
+                                case "5" :cout <<  "%";
+                                break;
+                                case "6" :cout <<  "^";
+                                break;
+                                case "7" :cout <<  "&";
+                                break;
+                                case "8" :cout <<  "*";
+                                break;
+                                case "9" :cout <<  "(";
+                                break;
+                                default:cout <<  "введи ЦИФРУ";
+                            }
+                    // }
+                
+                
+                // 3 task
+                void get_money() {
+                    cout << "сколько тенге у вас: ";
+                }
+                
+                void showMenu() {
+                    cout << "=== МЕНЮ ===\n";
+                    cout << "1. eur\n";
+                    cout << "2. usd\n";
+                    cout << "3. uan\n";
+                    cout << "4. выход\n";
+                    cout << "Выберите валюту: ";
+                }
+                
+                int main() {
+                    int money;
+                    int choice;
+                
+                    do {
+                        get_money();
+                        cin >> money;
+                        showMenu();
+                        cin >> choice;
+                
+                        switch (choice) {
+                            case 1:
+                                cout << round(money/551.99);
+                                break;
+                            case 2:
+                                cout << round(money/525.81);
+                                break;
+                            case 3:
+                                cout << round(money/72.38);
+                                break;
+                            case 4:
+                                cout << "выход";
+                                break;
+                            default:
+                                cout << "Некорректный ввод. Попробуйте снова.\n";
+                        }
+                
+                        cout << "\n"; // Разделитель между итерациями
+                
+                    }while (choice != 4);
+                
+                    return 0;
+                }
+        </pre>
+    </section>
+
+    <script>
+
+        // task 1
+
+        function task_1() {
+            let age = document.getElementById('task_1').value;
+            if (age >= 0) {
+                if (age >= 0 && 12 >= age) {
+                    document.getElementById('task-1').textContent = ' вы являетесь ребенком';
+
+                }
+                else if (age > 12 && age < 18) {
+                    document.getElementById('task-1').textContent = ' вы являетесь подростком ';
+
+                }
+                else if (age > 18 && age < 60) {
+                    document.getElementById('task-1').textContent = ' вы являетесь взрослым ';
+
+                }
+                else if (age >= 60) {
+                    document.getElementById('task-1').textContent = ' вы являетесь пенсионером  ';
+
+                }
+
+            }
+            else {
+                document.getElementById('task-1').textContent = 'вы ещё не родились ';
+
+            }
+        }
+
+        // task 2
+        function task_2() {
+            let cifre = document.getElementById('task_2').value;
+            switch (cifre) {
+                case "0" :document.getElementById('task-2').textContent = ')';
+                break;
+                case "1" :document.getElementById('task-2').textContent = '!';
+                break;
+                case "2" :document.getElementById('task-2').textContent = '@';
+                break;
+                case "3" :document.getElementById('task-2').textContent = '#';
+                break;
+                case "4" :document.getElementById('task-2').textContent = '$';
+                break;
+                case "5" :document.getElementById('task-2').textContent = '%';
+                break;
+                case "6" :document.getElementById('task-2').textContent = '^';
+                break;
+                case "7" :document.getElementById('task-2').textContent = '&';
+                break;
+                case "8" :document.getElementById('task-2').textContent = '*';
+                break;
+                case "9" :document.getElementById('task-2').textContent = '(';
+                break;
+                default:document.getElementById('task-2').textContent = 'введи ЦИФРУ';
+            }
+        }
+        // task 3
+        {
+            let KZT = document.getElementById('task_3').value;
+        function task_3() {
+            let KZT = document.getElementById('task_3').value;
+            document.getElementById('task-3').textContent = (KZT/551.99).toFixed(2);}
+        function task_3_1() {
+            let KZT = document.getElementById('task_3').value;
+        document.getElementById('task-3').textContent = (KZT/525.81).toFixed(2)};
+        function task_3_2() {
+            let KZT = document.getElementById('task_3').value;
+        document.getElementById('task-3').textContent = (KZT/72.38).toFixed(2);}
+        }
+    </script>
+</body>
+
+</html>
