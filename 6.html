@@ -384,9 +384,9 @@
 
             if (ugol_1 + ugol_2 + ugol_3 == 180) {
                 if ((90 == ugol_1)) {
-                    document.getElementById('task-1').textContent = 'первый прямой угол';
+                    document.getElementById('task-1').textContent = 'первый угол прямой ';
                 }
-                else if ((ugol_1 + ugol_2 + ugol_3) / 3 == 60) {
+                else if (ugol_1 == 60 && ugol_2 == 60) {
                     document.getElementById('task-1').textContent = 'равносторонний';
                 }
                 else if (ugol_1 == ugol_2 || ugol_2 == ugol_3 || ugol_1 == ugol_3) {
