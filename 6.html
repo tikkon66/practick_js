@@ -478,16 +478,25 @@
             summ = (num1 + num2 + num3) / 3;
             document.getElementById('task-5').textContent = summ;
         }
-        // task 6
 
+        
+        // task 6
 
         function task_6() {
             //здесь лучше использовать массив
-            let Element = parseInt(document.getElementById('task_6').value);
-            switch (Element) {
-                case 1: document.getElementById('task-6').textContent = '31';
+            let month = parseInt(document.getElementById('task_6').value);
+            if ( month == 2) {
+                year = prompt("високосный - 1,  не високосных - 0")
+                switch (year) {
+                    case 0: document.getElementById('task-6').textContent = '28';
                     break;
-                case 2: document.getElementById('task-6').textContent = '28 в високосных гоодах 29';
+                    case 1: document.getElementById('task-6').textContent = '29';
+                    break;
+                    default: document.getElementById('task-6').textContent = '1 или 2';
+                }
+            }
+            switch (month) {
+                case 1: document.getElementById('task-6').textContent = '31';
                     break;
                 case 3: document.getElementById('task-6').textContent = '31';
                     break;
