@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 </title>
+</head>
+
+<body>
+    <style>
+        div {
+            width: 200px;
+            height: 20px;
+        }
+
+        h2 {
+            margin-top: 70px;
+        }
+    </style>
+    <section>
+        <h2>
+            task_1 - Написать программу, классифицирующую треугольники (прямоугольные, равнобедренный, произвольный), если даны углы. 
+            Проверить, возможен ли вообще треугольник, если не возможен, то сделать повторный ввод значений.</h2>
+        <button onclick="task_1()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-1"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_2 - CASE. Подсчитать количество отрицательных чисел в веденном человеком диапазоне.
+             Диапазон может вводиться как в прямом, так и в обратном порядке.</h2>
+        <input type="number" id="task_2" placeholder="введи ">
+        <input type="number" id="task_2-1" placeholder="введи">
+        <button onclick="task_2()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-2"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_3 Написать программу, которая по номеру дня недели - целому числу от 1 до 7 выдавать в качестве результата количество уроков в классе в соответствующий день.
+             Проверить, возможен ли такой день недели, если не возможен, то сделать повторный ввод значений.</h2>
+        <button onclick="task_3()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-3"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_4 - Задача на switch … case. Написать алгоритм, который по номеру дня недели - целому числу от 1 до 7
+            выдавать в качестве результата количество уроков в классе в соответствующий день.</h2>
+        <input type="number" id="task_4" placeholder="день недели в числах">
+        <button onclick="task_4()">
+            Показать ответ
+        </button>
+
+        <div>
+            <p id="task-4"></p>
+        </div>
+    </section>
+    <section>
+        <h2>
+            task_5 - IF: Найти среднее число из трех</h2>
+        <input type="number" id="task_5" placeholder="первое">
+        <input type="number" id="task_5_1" placeholder="второе">
+        <input type="number" id="task_5_2" placeholder="третья">
+        <button onclick="task_5()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-5"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_6 - CASE. Написать алгоритм нахождения числа дней в месяце, если даны: Номер месяца n - целое число а,
+            равное 1 для високосного года и равное 0 в противном случае.</h2>
+        <input type="number" id="task_6" placeholder="число месяца">
+        <button onclick="task_6()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-6"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_7- IF: Дракон каждый год отращивает по три головы, но после того, как ему исполнится 100 лет - только
+            по две. Запросить сколько ему лет, вывести сколько голов и глаз у дракона в этом возрасте?</h2>
+        <input type="number" id="task_7" placeholder="сколько лет дракону">
+        <button onclick="task_7()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-7"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_8 - CASE. По номеру дня недели вывести его название.</h2>
+        <input type="number" id="task_8" placeholder="день недели">
+        <button onclick="task_8()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-8"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_9- IF: Еще одна задача для самостоятельно решения. Необходимо написать программу, которая проверяет
+            пользователя на знание таблицы умножения. Пользователь сам вводит два целых однозначных числа. Программа
+            задаёт вопрос: результат умножения первого числа на второе. Пользователь должен ввести ответ и увидеть на
+            экране правильно он ответил или нет. Если нет – показать еще и правильный результат.</h2>
+        <input type="number" id="task_9" placeholder="первое">
+        <input type="number" id="task_9-1" placeholder="второе">
+        <input type="number" id="task_9-2" placeholder="ответ">
+
+        <button onclick="task_9()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-9"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_10 - CASE. В зависимости от того введена ли открытая скобка или закрытая, напечатать "открытая круглая
+            скобка" или "закрытая фигурная скобка". (Учитывать круглые, квадратные, фигурные скобки).</h2>
+        <input type="text" id="task_10" placeholder="скобки">
+        <button onclick="task_10()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-10"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task-11 - IF: Пользователь задает размеры прямоугольной двери a, b и задает размеры шкафа, который имеет
+            форму прямоугольного параллелепипеда x, y, z. Можно ли пронести шкаф сквозь дверь, если проносить его
+            разрешается так, чтобы каждое ребро шкафа было параллельно или перпендикулярно стороне двери. При разных
+            введенных данных выводить ДА или НЕТ.</h2>
+        <input type="number" id="task_11" placeholder="а">
+        <input type="number" id="task_11-1" placeholder="b">
+        <input type="number" id="task_11-2" placeholder="x">
+        <input type="number" id="task_11-3" placeholder="y">
+        <input type="number" id="task_11-4" placeholder="z">
+        <button onclick="task_11()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-11"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_12 - CASE. По введенному числу от 1 до 7 вывести название цвета, соответствующего этому коду.</h2>
+        <input type="number" id="task_12" placeholder="число">
+        <button onclick="task_12()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-12"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_13 - CASE. Определить, является ли введенная буква русского алфавита гласной.</h2>
+        <input type="number" id="task_13" placeholder="буква">
+        <button onclick="task_13()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-13"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_14 - IF: Даны четыре целых числа, одно из которых отлично от трех других, равных между собой.
+            Определить порядковый номер числа, отличного от остальных</h2>
+        <input type="number" id="task_14" placeholder="первое">
+        <input type="number" id="task_14-1" placeholder="второе">
+        <input type="number" id="task_14-2" placeholder="третья">
+        <input type="number" id="task_14-3" placeholder="четыре">
+        <button onclick="task_14()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-14"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_15 - CASE. Напишите программу, которая по введенному числу из промежутка 0..24, определяет время суток.
+        </h2>
+        <input type="number" id="task_15" placeholder="сколько">
+        <button onclick="task_15()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-15"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_16- IF: Даны три переменные вещественного типа: A, B, C. Если их значения упорядочены по возрастанию
+            или убыванию, то удвоить их; в противном случае заменить значение каждой переменной на противоположное.
+            Вывести новые значения переменных A, B, C. </h2>
+        <input type="number" id="task_16" placeholder="первое">
+        <input type="number" id="task_16-1" placeholder="второе">
+        <input type="number" id="task_16-2" placeholder="третья">
+        <button onclick="task_16()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-16"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_17- CASE. Напишите программу, которая по введенному числу из промежутка 1..12, определяет месяц.</h2>
+        <input type="number" id="task_17" placeholder="Число задом на перед">
+        <button onclick="task_17()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-17"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_18 - CASE. Определить, является ли введенная буква русского алфавита согласной.</h2>
+        <input type="text" id="task_18" placeholder="Число задом на перед">
+        <button onclick="task_18()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-18"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_19 - IF: Даны три числа. Найти сумму двух наибольших из них.</h2>
+        <input type="number" id="task_19" placeholder="1 число">
+        <input type="number" id="task_19-1" placeholder="2 число">
+        <input type="number" id="task_19-2" placeholder="3 число">
+        <button onclick="task_19()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-19"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_20 - CASE. В зависимости от введенных знаков: № % * # @ & - выводит их название.</h2>
+        <input type="number" id="task_20" placeholder="Число задом на перед">
+        <button onclick="task_20()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-20"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_21 - IF: Даны две переменные целого типа: A и B. Если их значения не равны, то присвоить каждой
+            переменной большее из этих значений, а если равны, то присвоить переменным нулевые значения. Вывести новые
+            значения переменных A и B.</h2>
+        <input type="number" id="task_21" placeholder="1 число ">
+        <input type="number" id="task_21-1" placeholder="2 число ">
+        <button onclick="task_21()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-21"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_22 - IF. В зависимости от набранного количества баллов, напишите ваши планы. <br>
+            Например: <br>
+            80..100 – поступлю на бюджет <br>
+            60..79 – есть шанс поступить на бюджет <br>
+            40..59 – экзамены сданы, рассматриваю все варианты <br>
+            0..39 – «А знаешь, всё ещё будет!». <br>
+            Составьте программу, используя оператор выбора case и ваши варианты ответов. <br>
+            - В зависимости от набранного количества баллов, напишите ваши планы. Например: <br>
+            80..100 – поступлю на бюджет <br>
+            60..79 – есть шанс поступить на бюджет <br>
+            40..59 – экзамены сданы, рассматриваю все варианты <br>
+            0..39 – «А знаешь, всё ещё будет!».</h2>
+        <input type="number" id="task_22" placeholder="баллы">
+        <button onclick="task_22()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-22"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_23 - IF: Даны две переменные вещественного типа: A, B. Перераспределить значения данных переменных так,
+            чтобы в A оказалось меньшее из значений, а в B — большее. Вывести новые значения переменных A и B.</h2>
+        <input type="number" id="task_23" placeholder="1 число ">
+        <input type="number" id="task_23-1" placeholder="2 число ">
+        <button onclick="task_23()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-23"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_24 - CASE. Напишите программу выбора фруктов (не менее 10) по его уникальному коду.</h2>
+        <input type="number" id="task_24" placeholder="Число">
+        <button onclick="task_24()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-24"></p>
+        </div>
+
+    </section>
+    <section>
+        <h2>
+            task_25 - IF: Даны пять целых чисел. Найти количество положительных чисел в исходном наборе.</h2>
+        <input type="number" id="task_25" placeholder="1 чило">
+        <input type="number" id="task_25-1" placeholder="2 чило">
+        <input type="number" id="task_25-2" placeholder="3 чило">
+        <input type="number" id="task_25-3" placeholder="4 чило">
+        <input type="number" id="task_25-4" placeholder="5 чило">
+        <button onclick="task_25()">
+            Показать ответ
+        </button>
+        <div>
+            <p id="task-25"></p>
+        </div>
+
+    </section>
+
+    <script>
+
+        // task 1
+
+        function task_1() {
+            let ugol_1 = parseFloat(prompt("первый угол"));
+            let ugol_2 = parseFloat(prompt("второй угол"));
+            let ugol_3 = parseFloat(prompt("третий угол"));
+                
+            while (ugol_1 + ugol_2 + ugol_3 !== 180) {
+                alert("не верно, запишите значение еще раз");
+                ugol_1 = prompt("первый угол");
+                ugol_2 = prompt("второй угол");
+                ugol_3 = prompt("третий угол");
+            }
+                if (90 == ugol_1) {
+                    document.getElementById('task-1').textContent = 'первый угол прямой ';
+                }
+                else if (ugol_1 == 60 && ugol_2 == 60) {
+                    document.getElementById('task-1').textContent = 'равносторонний';
+                }
+                else if (ugol_1 == ugol_2 || ugol_2 == ugol_3 || ugol_1 == ugol_3) {
+                    document.getElementById('task-1').textContent = 'равнобедренный';
+                }
+                else if ((0 < ugol_1 < 90)) {
+                    document.getElementById('task-1').textContent = ' первый угол острый';
+                }
+                else if ((180 > ugol_1 > 90)) {
+                    document.getElementById('task-1').textContent = 'первый тупой угол';
+
+                }
+        }
+
+        // task 2
+        function task_2() {
+            let num1 = document.getElementById('task_2').value;
+            let num2 = document.getElementById('task_2-1').value;
+            let i = 1;
+            if (num1 > num2) {
+                while (num1 >= num2) {
+                    if (num2 < 0){
+                        i++;
+                    }
+                    num2++;
+                }
+            }
+            document.getElementById('task-2').textContent = i;
+
+            
+        }
+        // task 3
+
+        function task_3() {
+            let num1 = prompt(" введи день недели");
+            let last = num1 % 10;
+
+            while (1 > num1 && 7 < num1){
+                num1 = prompt(" не правильно ввели")
+            }
+            switch (num1) {
+            case 1: document.getElementById('task-3').textContent = '4 уроков';
+                break;
+            case 2: document.getElementById('task-3').textContent = '3 уроков';
+                break;
+            case 3: document.getElementById('task-3').textContent = '2 уроков';
+                break;
+            case 4: document.getElementById('task-3').textContent = '5 уроков';
+                break;
+            case 5: document.getElementById('task-3').textContent = '3 уроков';
+                break;
+            case 6: document.getElementById('task-3').textContent = '3 уроков';
+                break;
+            case 7: document.getElementById('task-3').textContent = '4 уроков';
+        }
+
+        }
+        // task 4
+
+        function task_4() {
+            let num1 = parseInt(document.getElementById('task_4').value);
+
+            switch (num1) {
+                case 1: document.getElementById('task-4').textContent = '4 уроков';
+                    break;
+                case 2: document.getElementById('task-4').textContent = '3 уроков';
+                    break;
+                case 3: document.getElementById('task-4').textContent = '2 уроков';
+                    break;
+                case 4: document.getElementById('task-4').textContent = '5 уроков';
+                    break;
+                case 5: document.getElementById('task-4').textContent = '3 уроков';
+                    break;
+                case 6: document.getElementById('task-4').textContent = '3 уроков';
+                    break;
+                case 7: document.getElementById('task-4').textContent = '4 уроков';
+                default: document.getElementById('task-4').textContent = 'такого дня нету';
+
+            }
+        }
+        // task 5\\
+
+        function task_5() {
+            let num1 = parseInt(document.getElementById('task_5').value);
+            let num2 = parseInt(document.getElementById('task_5_1').value);
+            let num3 = parseInt(document.getElementById('task_5_2').value);
+
+            summ = (num1 + num2 + num3) / 3;
+            document.getElementById('task-5').textContent = summ;
+        }
+        // task 6
+
+
+        function task_6() {
+            //здесь лучше использовать массив
+            let Element = parseInt(document.getElementById('task_6').value);
+            switch (Element) {
+                case 1: document.getElementById('task-6').textContent = '31';
+                    break;
+                case 2: document.getElementById('task-6').textContent = '28 в високосных гоодах 29';
+                    break;
+                case 3: document.getElementById('task-6').textContent = '31';
+                    break;
+                case 4: document.getElementById('task-6').textContent = '30';
+                    break;
+                case 5: document.getElementById('task-6').textContent = '31';
+                    break;
+                case 6: document.getElementById('task-6').textContent = '30';
+                    break;
+                case 7: document.getElementById('task-6').textContent = '31';
+                    break;
+                case 8: document.getElementById('task-6').textContent = '31';
+                    break;
+                case 9: document.getElementById('task-6').textContent = '30';
+                    break;
+                case 10: document.getElementById('task-6').textContent = '31';
+                    break;
+                case 11: document.getElementById('task-6').textContent = '30';
+                    break;
+                case 12: document.getElementById('task-6').textContent = '31';
+                    break;
+                default: document.getElementById('task-6').textContent = 'чувак, месяцов всего 12';
+                    break;
+            }
+        }
+        // task 7
+
+        function task_7() {
+            let year = parseInt(document.getElementById('task_7').value);
+            let eye = Math.round(year / 100);
+            document.getElementById('task-7').textContent = `голов ${year} глаз ${eye}`;
+        }
+        // task 8
+
+        function task_8() {
+            let num1 = parseInt(document.getElementById('task_8').value);
+
+            switch (num1) {
+                case 1: document.getElementById('task-8').textContent = 'пн';
+                    break;
+                case 2: document.getElementById('task-8').textContent = 'вт';
+                    break;
+                case 3: document.getElementById('task-8').textContent = 'ср';
+                    break;
+                case 4: document.getElementById('task-8').textContent = 'чт';
+                    break;
+                case 5: document.getElementById('task-8').textContent = 'пт';
+                    break;
+                case 6: document.getElementById('task-8').textContent = 'сб';
+                    break;
+                case 7: document.getElementById('task-8').textContent = 'вс';
+                default: document.getElementById('task-8').textContent = 'погодите ка, что то здесь ни так. АХА ПОПАЛСЯ';
+
+            }
+        }
+        // task 9
+        function task_9() {
+            let num1 = document.getElementById('task_9').value;
+            let num2 = document.getElementById('task_9-1').value;
+            let num3 = document.getElementById('task_9-2').value;
+
+            if (num1 * num2 == num3) {
+                document.getElementById('task-9').textContent = 'правильно ответ ' + num1 * num2;
+            }
+            else {
+                document.getElementById('task-9').textContent = 'неправильно ответ ' + num1 * num2;
+            }
+
+        }
+
+        // task 10
+
+        function task_10() {
+            let str = document.getElementById('task_10').value;
+            let lenght = str[str.lenght - 1];
+
+            if (str[0] == '{' || str[str.lenght - 1] == '}') {
+                document.getElementById('task-10').textContent = "Закрытая фигурная скобка";
+            }
+            else if (str[0] == '{') {
+                document.getElementById('task-10').textContent = "Открытая фигурная скобка";
+            }
+
+            else if (str[0] == '(' && lenght == ')') {
+                document.getElementById('task-10').textContent = "Закрытая скобка";
+            }
+            else if (str[0] == '(') {
+                document.getElementById('task-10').textContent = "Открытая скобка";
+            }
+
+            else if (str[0] == '[' || str[str.lenght - 1] == ']') {
+                document.getElementById('task-10').textContent = "Закрытая квадратная скобка";
+            }
+            else if (str[0] == '[') {
+                document.getElementById('task-10').textContent = "Открытая квадратная скобка";
+            }
+
+            else {
+                document.getElementById('task-10').textContent = "в начале или вообще нету скобок";
+            }
+        }
+
+        // task 11
+
+        function task_11() {
+            let a = parseInt(document.getElementById('task_11').value);
+            let b = parseInt(document.getElementById('task_11-1').value);
+            let x = parseInt(document.getElementById('task_11-2').value);
+            let y = parseInt(document.getElementById('task_11-3').value);
+            let z = parseInt(document.getElementById('task_11-4').value);
+
+            if ((a > x && b > y) || (a > y && b > x) ||
+                (a > y && b > z) || (z > y && b > y) ||
+                (a > z && b > x) || (a > z && b > x)) {
+                document.getElementById('task-11').textContent = "входить";
+            }
+
+            else {
+                document.getElementById('task-11').textContent = "не входить";
+            }
+
+        }
+
+        // task 12
+
+        function task_12() {
+            let num = parseInt(document.getElementById('task_12').value);
+
+            switch (num1) {
+                case 1: document.getElementById('task-12').textContent = 'красный';
+                    break;
+                case 2: document.getElementById('task-12').textContent = 'белый';
+                    break;
+                case 3: document.getElementById('task-12').textContent = 'синий';
+                    break;
+                case 12: document.getElementById('task-12').textContent = 'черный';
+                    break;
+                case 5: document.getElementById('task-12').textContent = 'коричневый';
+                    break;
+                case 6: document.getElementById('task-12').textContent = 'желтый';
+                    break;
+                case 7: document.getElementById('task-12').textContent = 'зеленый';
+                default: document.getElementById('task-12').textContent = 'такого цвета нету';
+
+            }
+        }
+
+        // task 13
+
+        function task_13() {
+            let word = document.getElementById('task_13').value;
+
+            switch (word) {
+                case "а": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "о": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "у": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "ы": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "и": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "э": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "е": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "ё": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "ю": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                case "я": document.getElementById('task-13').textContent = 'да гласный';
+                    break;
+                default: document.getElementById('task-13').textContent = 'другой язык либо согласный';
+                    break;
+            }
+
+        }
+
+        // task 14
+
+        function task_14() {
+            let num1 = parseInt(document.getElementById('task_14').value);
+            let num2 = parseInt(document.getElementById('task_14-1').value);
+            let num3 = parseInt(document.getElementById('task_14-2').value);
+            let num4 = parseInt(document.getElementById('task_14-3').value);
+
+            if (num1 !== num2 && num1 !== num3 && num1 !== num4) {
+                document.getElementById('task-14').textContent = "если правильно написано то 1 число отличается";
+            }
+            else if (num2 !== num1 && num2 !== num3 && num2 !== num4) {
+                document.getElementById('task-14').textContent = "2 число отличается";
+            }
+            else if (num3 !== num2 && num3 !== num1 && num3 !== num4) {
+                document.getElementById('task-14').textContent = "3 число отличается";
+            }
+            else if (num4 !== num2 && num4 !== num3 && num4 !== num1) {
+                document.getElementById('task-14').textContent = "4 число отличается";
+            }
+            else {
+                document.getElementById('task-14').textContent = "все числа одинаковые";
+            }
+
+        }
+
+        // task 15
+
+        function task_15() {
+            let time = parseInt(document.getElementById('task_15').value);
+
+            if ( time <= 24) {
+                if (9 >= time && time >=4) {
+                    document.getElementById('task-15').textContent = "сейчас утро";
+                }
+                else if (17 >= time && time  >= 10) {
+                    document.getElementById('task-15').textContent = "сейчас день";
+                }
+                else if (21 >= time && time  >= 18) {
+                    document.getElementById('task-15').textContent = "сейчас вечер";
+                }
+                else {
+                    document.getElementById('task-15').textContent = "сейчас ночь";
+                }
+            }
+            
+            else {
+                document.getElementById('task-15').textContent = "24 часа ";
+            }
+        }
+
+        // task 16
+
+        function task_16() {
+            let num1 = parseInt(document.getElementById('task_16').value);
+            let num2 = parseInt(document.getElementById('task_16-1').value);
+            let num3 = parseInt(document.getElementById('task_16-2').value);
+
+            if ((num1 > num2 && num2 > num3) || (num1 < num2 && num2 < num3)) {
+                document.getElementById('task-16').textContent = num1 * 2 + "" + num2 * 2 + "" + num3 * 2;
+            }
+            else {
+                document.getElementById('task-16').textContent = num1 * (-1) + "" + num2 * (-1) + "" + num3 * (-1);
+            }
+        }
+
+        // task 17
+
+        function task_17() {
+            //здесь лучше использовать массив
+            let Element = parseInt(document.getElementById('task_17').value);
+            switch (Element) {
+                case 1:document.getElementById('task-17').textContent = 'январь';
+                break;
+                case 2:document.getElementById('task-17').textContent = 'февраль';
+                break;
+                case 3:document.getElementById('task-17').textContent = 'март';
+                break;
+                case 4:document.getElementById('task-17').textContent = 'апрель';
+                break;
+                case 5:document.getElementById('task-17').textContent = 'май';
+                break;
+                case 17:document.getElementById('task-17').textContent = 'июнь';
+                break;
+                case 7:document.getElementById('task-17').textContent = 'июль';
+                break;
+                case 8:document.getElementById('task-17').textContent = 'август';
+                break;
+                case 9:document.getElementById('task-17').textContent = 'сентябрь';
+                break;
+                case 10:document.getElementById('task-17').textContent = 'октябрь';
+                break;
+                case 11:document.getElementById('task-17').textContent = 'ноябрь';
+                break;
+                case 12:document.getElementById('task-17').textContent = 'декабрь';
+                break;
+                default:document.getElementById('task-17').textContent = 'чувак, месяцов всего 12';
+                break;
+            }
+        }
+
+        // task 18
+
+        function task_18() {
+            let word = document.getElementById('task_18').value;
+
+            switch (word) {
+                case "б": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "в": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "г": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "д": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "ж": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "з": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "й": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "к": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "л": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "м": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "н": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "п": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "р": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "с": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "т": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "ф": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "х": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "ц": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "ч": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "ш": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                case "щ": document.getElementById('task-18').textContent = 'да согласный';
+                    break;
+                default: document.getElementById('task-18').textContent = 'другой язык либо гласный';
+                    break;
+            }
+        }
+
+        // task 19
+
+        function task_19() {
+            let num1 = parseInt(document.getElementById('task_19').value);
+            let num2 = parseInt(document.getElementById('task_19-1').value);
+            let num3 = parseInt(document.getElementById('task_19-2').value);
+
+            if ((num1 > num3 &&  num2 > num3)) {
+                document.getElementById('task-19').textContent = num1 * num2;
+            }
+            else if ((num2 > num1 &&  num3 > num1)) {
+                document.getElementById('task-19').textContent = num3 * num2;
+            }
+            else if ((num1 > num2 &&  num3 > num2)) {
+                document.getElementById('task-19').textContent = num1 * num3;
+            }
+            else {
+                document.getElementById('task-19').textContent = "что то нето";
+            }
+        }
+
+        // task 20
+
+        function task_20() {
+            let char = document.getElementById('task_20').value;
+
+            switch (char) {
+                case "№": document.getElementById('task-18').textContent = 'номер';
+                    break;
+                case "%": document.getElementById('task-18').textContent = 'процент';
+                    break;
+                case "*": document.getElementById('task-18').textContent = 'звездочка';
+                    break;
+                case "#": document.getElementById('task-18').textContent = 'решетка';
+                    break;
+                case "@": document.getElementById('task-18').textContent = 'собачка';
+                    break;
+                case "&": document.getElementById('task-18').textContent = 'энд';
+                    break;
+                case "-": document.getElementById('task-18').textContent = 'тире';
+                    break;
+                default: document.getElementById('task-18').textContent = 'только эти';
+                    break;
+            }
+        }
+
+
+        // task 21
+
+        function task_21() {
+            let num1 = document.getElementById('task_21').value;
+            let num2 = document.getElementById('task_21-1').value;
+            let int_num1 = parseInt(num1);
+            let int_num2 = parseInt(num2);
+
+            if (num1 == int_num1 && num2 == int_num2) {
+                if (num1 > num2) {
+                    num2 = num1;
+                }
+                else if (num2 > num1) {
+                    num1 = num2;
+                }
+                else {
+                    num1 = 0;
+                    num2 = 0;
+                }
+                document.getElementById('task-21').textContent = num1 + " " + num2;
+            }
+            else {
+                document.getElementById('task-21').textContent = "не целое";
+            }
+        }
+
+        // task 22
+
+        function task_22() {
+            let score = parseInt(document.getElementById('task_22').value);
+
+            if (score >= 80 && score <= 100) {
+                document.getElementById('task-22').textContent = "поступлю на бюджет";
+            }
+            else if (score >= 60 && score <= 79) {
+                document.getElementById('task-22').textContent = "есть шанс поступить на бюджет";
+            }
+            else if (score >= 40 && score <= 59) {
+                document.getElementById('task-22').textContent = "экзамены сданы, рассматриваю все варианты";
+            }
+            else if (score >= 0 && score <= 39) {
+                document.getElementById('task-22').textContent = "А знаешь, всё ещё будет";
+            }
+            else {
+                document.getElementById('task-22').textContent =  "100 бальная система";
+            }
+
+            
+        }
+
+        // task 23
+
+        function task_23() {
+            let num1 = parseInt(document.getElementById('task_23').value);
+            let num2 = parseInt(document.getElementById('task_23-1').value);
+            let num2_d = num2;
+
+            if (num1 > num2) {
+                num2 = num1;
+                num1 = num2_d;
+            }
+
+            document.getElementById('task-23').textContent = num1 + " " + num2;
+        }
+
+        // task 24
+
+        function task_24() {
+            let num = parseInt(document.getElementById('task_24').value);
+
+            switch (num) {
+                case 1:document.getElementById('task-24').textContent = 'яблоко';
+                break;
+                case 2:document.getElementById('task-24').textContent = 'финики';
+                break;
+                case 3:document.getElementById('task-24').textContent = 'груша';
+                break;
+                case 4:document.getElementById('task-24').textContent = 'апельсин';
+                break;
+                case 5:document.getElementById('task-24').textContent = 'мандарин';
+                break;
+                case 24:document.getElementById('task-24').textContent = 'банан';
+                break;
+                case 7:document.getElementById('task-24').textContent = 'киви';
+                break;
+                case 8:document.getElementById('task-24').textContent = 'грейпфрут';
+                break;
+                case 9:document.getElementById('task-24').textContent = 'манго';
+                break;
+                case 10:document.getElementById('task-24').textContent = 'драгон';
+                break;
+                case 11:document.getElementById('task-24').textContent = 'кокос';
+                break;
+                break;
+                default:document.getElementById('task-24').textContent = ' всего 11';
+                break;
+            }
+        }
+
+        // task 25
+
+        function task_25() {
+            let num1 = document.getElementById('task_25').value;
+            let num2 = document.getElementById('task_25-1').value;
+            let num3 = document.getElementById('task_25-2').value;
+            let num4 = document.getElementById('task_25-3').value;
+            let num5 = document.getElementById('task_25-4').value;
+            let i = 0;
+
+            if (num1 == parseInt(num1)) {
+                i += 1;
+            }
+            if (num2 == parseInt(num2)) {
+                i += 1;
+            }
+            if (num3 == parseInt(num3)) {
+                i += 1;
+            }
+            if (num4 == parseInt(num4)) {
+                i += 1;
+            }
+            if (num5 == parseInt(num5)) {
+                i += 1;
+            }
+
+            document.getElementById('task-25').textContent = "количество целых  чисел " + i;
+        }
+
+    </script>
+</body>
+</html>
