@@ -138,10 +138,10 @@
             let summ2 = summ > summ1 ? summ - summ1 : summ1 - summ;
 
             let hour2 = parseInt(summ2 / 3600);
-            hour2 < 1 ? hour2 = 0 : summ2 %= 3600;
+            summ2 %= 3600;
 
             let min2 = parseInt(summ2 / 60);
-            min2 < 1 ? min2 = 0 : summ2 %= 60;
+            summ2 %= 60;
                 
             return(hour2 + ":" + min2 + ":" + summ2)
         }
