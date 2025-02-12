@@ -299,6 +299,44 @@
         }
     
     </script>
+
+    <pre>
+        #include <iostream>
+        using namespace std;
+        
+        void task_1() {
+            int posit = 0, niga = 0, zero = 0, two = 0, one = 0;
+            int arr[10];
+        
+            for (int i = 0; i < 10; i++) {
+                cout << "Введите число: ";
+                cin >> arr[i];
+        
+                if (arr[i] > 0) {
+                    posit++;
+                } else if (arr[i] < 0) {
+                    niga++;
+                } else {
+                    zero++;
+                }
+        
+                if (arr[i] % 2 == 0) {
+                    two++;
+                } else {
+                    one++;
+                }
+            }
+        
+            cout << "Положительных: " << posit << " Отрицательных: " << niga 
+                 << " Нулей: " << zero << " Четных: " << two << " Нечетных: " << one << endl;
+        }
+        
+        int main() {
+            task_1();
+            return 0;
+        }  
+    </pre>
+    
 </body>
 
 </html>
