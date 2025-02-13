@@ -317,230 +317,321 @@ function task_11() {
             let num = +prompt("какое число")
             arr[num-1] = elem;
         }
-    
+
     </script>
-
     <pre>
-        #include <iostream>
-        using namespace std;
-        
-        void task_1() {
-            int posit = 0, niga = 0, zero = 0, two = 0, one = 0;
-            int arr[10];
-        
-            for (int i = 0; i < 10; i++) {
-                cout << "Введите число: ";
-                cin >> arr[i];
-        
-                if (arr[i] > 0) {
-                    posit++;
-                } else if (arr[i] < 0) {
-                    niga++;
-                } else {
-                    zero++;
-                }
-        
-                if (arr[i] % 2 == 0) {
-                    two++;
-                } else {
-                    one++;
-                }
-            }
-        
-            cout << "Положительных: " << posit << " Отрицательных: " << niga 
-                 << " Нулей: " << zero << " Четных: " << two << " Нечетных: " << one << endl;
-        }
-        void task_2() {
-    vector<int> arr(5);
-    cout << "Введите 5 чисел: ";
-    for (int i = 0; i < 5; i++) {
+    #include <iostream>
+using namespace std;
+
+void task_1() {
+    int posit = 0, niga = 0, zero = 0, two = 0, one = 0;
+    int arr[10];
+
+    for (int i = 0; i < 10; i++) {
+        cout << "Введите число: ";
         cin >> arr[i];
+
+        if (arr[i] > 0) posit++;
+        else if (arr[i] < 0) niga++;
+        else zero++;
+
+        if (arr[i] % 2 == 0) two++;
+        else one++;
     }
 
-    vector<int> arr2;
-    for (int num : arr) {
-        arr2.push_back(-num);
-    }
+    cout << "Положительных: " << posit << " Отрицательных: " << niga 
+         << " Нулей: " << zero << " Четных: " << two << " Нечетных: " << one;
+}
+
+void task_2() {
+    int arr[5];
+    cout << "Введите 5 чисел: ";
+    for (int i = 0; i < 5; i++) cin >> arr[i];
+
+    int arr2[5];
+    for (int i = 0; i < 5; i++) arr2[i] = -arr[i];
 
     cout << "Отрицательный массив: ";
-    for (int num : arr2) {
-        cout << num << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < 5; i++) cout << arr2[i] << " ";
 }
+
 void task_3() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
-    }
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
 
-    swap(arr[0], arr[size - 1]);
+    int temp = arr[0];
+    arr[0] = arr[size - 1];
+    arr[size - 1] = temp;
 
     cout << "Массив после замены: ";
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
 }
+
 void task_4() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
-    }
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
 
     int index1, index2;
     cout << "Введите два индекса для замены (начиная с 1): ";
     cin >> index1 >> index2;
-    
-    swap(arr[index1 - 1], arr[index2 - 1]);
+
+    int temp = arr[index1 - 1];
+    arr[index1 - 1] = arr[index2 - 1];
+    arr[index2 - 1] = temp;
 
     cout << "Массив после замены: ";
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
 }
+
 void task_5() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
-    }
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
 
-    reverse(arr.begin(), arr.end());
+    for (int i = 0; i < size / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[size - 1 - i];
+        arr[size - 1 - i] = temp;
+    }
 
     cout << "Развернутый массив: ";
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
 }
+
 void task_6() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
-    }
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
 
-    int minNum = *min_element(arr.begin(), arr.end());
+    int minNum = arr[0];
+    for (int i = 1; i < size; i++) if (arr[i] < minNum) minNum = arr[i];
 
-    cout << "Минимальное число: " << minNum << endl;
+    cout << "Минимальное число: " << minNum;
+
+    delete[] arr;
 }
+
 void task_7() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
-    }
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
 
-    int maxNum = *max_element(arr.begin(), arr.end());
+    int maxNum = arr[0];
+    for (int i = 1; i < size; i++) if (arr[i] > maxNum) maxNum = arr[i];
 
-    cout << "Максимальное число: " << maxNum << endl;
+    cout << "Максимальное число: " << maxNum;
+
+    delete[] arr;
 }
+
 void task_8() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
+
+    int minIndex = 0, maxIndex = 0;
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < arr[minIndex]) minIndex = i;
+        if (arr[i] > arr[maxIndex]) maxIndex = i;
     }
 
-    int minIndex = min_element(arr.begin(), arr.end()) - arr.begin();
-    int maxIndex = max_element(arr.begin(), arr.end()) - arr.begin();
-
-    swap(arr[minIndex], arr[maxIndex]);
+    int temp = arr[minIndex];
+    arr[minIndex] = arr[maxIndex];
+    arr[maxIndex] = temp;
 
     cout << "Массив после замены: ";
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
 }
+
 void task_9() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
-    }
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
 
     int index;
     cout << "Какой элемент удалить (начиная с 1)? ";
     cin >> index;
-    
-    arr.erase(arr.begin() + index - 1);
+
+    for (int i = index - 1; i < size - 1; i++) arr[i] = arr[i + 1];
+    size--;
 
     cout << "Массив после удаления: ";
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
 }
+
 void task_10() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
-    }
+    int* arr = new int[size + 1];
+    for (int i = 0; i < size; i++) cin >> arr[i];
 
     int value, index;
     cout << "Введите новое значение и индекс (начиная с 1), после которого вставить: ";
     cin >> value >> index;
-    
-    arr.insert(arr.begin() + index, value);
+
+    for (int i = size; i > index; i--) arr[i] = arr[i - 1];
+    arr[index] = value;
+    size++;
 
     cout << "Массив после вставки: ";
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
 }
+
 void task_11() {
     int size;
     cout << "Сколько значений в массиве? ";
     cin >> size;
 
-    vector<int> arr(size);
-    for (int &num : arr) {
-        cin >> num;
-    }
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
 
-    sort(arr.begin(), arr.end());
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 
     cout << "Отсортированный массив: ";
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
 }
 
-        int main() {
-            task_1();
-        }  
+void task_12() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    int* arr = new int[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
+
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - 1 - i; j++) {
+            if (arr[j] < arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Отсортированный массив: ";
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
+}
+
+void task_13() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    char* arr = new char[size];
+    for (int i = 0; i < size; i++) cin >> arr[i];
+
+    char vowels[] = {'a', 'e', 'i', 'o', 'u'};
+    int vowelCount = 0;
+
+    for (int i = 0; i < size; i++) {
+        for (char vowel : vowels) {
+            if (arr[i] == vowel) {
+                char temp = arr[i];
+                arr[i] = arr[vowelCount];
+                arr[vowelCount] = temp;
+                vowelCount++;
+                break;
+            }
+        }
+    }
+
+    cout << "Отсортированный массив: ";
+    for (int i = 0; i < size; i++) cout << arr[i] << " ";
+
+    delete[] arr;
+}
+
+void task_14() {
+    int number;
+    cout << "Введите число: ";
+    cin >> number;
+
+    int temp = number;
+    int digitCount = 0;
+    while (temp != 0) {
+        temp /= 10;
+        digitCount++;
+    }
+
+    int* arr = new int[digitCount];
+    for (int i = digitCount - 1; i >= 0; i--) {
+        arr[i] = number % 10;
+        number /= 10;
+    }
+
+    cout << "Массив цифр: ";
+    for (int i = 0; i < digitCount; i++) cout << arr[i] << " ";
+
+    delete[] arr;
+}
+
+int main() {
+    task_1();
+    task_2();
+    task_3();
+    task_4();
+    task_5();
+    task_6();
+    task_7();
+    task_8();
+    task_9();
+    task_10();
+    task_11();
+    task_12();
+    task_13();
+    task_14();
+    return 0;
+}
     </pre>
     
 </body>
