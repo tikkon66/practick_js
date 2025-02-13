@@ -216,41 +216,37 @@
         }
 
         //  11 Создать динамический массив, запросить значение элементов, вывести массив, а после отсортировать его по возрастанию.
-        
-        function task_11() {
-            let len = +prompt("сколько значений в массиве?")
-            let arr = [];
-            let i = 0;
-            while(0 < len){
-                arr[i] = +prompt("")
-                i++
-                len--;
-            }
-            let min = arr[0];
-            let arr2 = arr;
-            let min_num;
-            let j = 0;
-            while(arr2.length > 0) {
-                while(i < arr2.length){
-                    if (min < arr2[i]) {
-                        min = arr2[i];
-                        min_num = i;
-                    }
-                    i++;
-                }
-                arr2.splice(min_num - 1, 1)
-                arr[j] = min;
-                j++;
-                i = 0;
-                min = arr2[0];
-            }
-            alert(arr);
-        }
-        task_11()
+   
+function task_11() {
+    let len = +prompt("Сколько значений в массиве?");
+    let arr = [];
 
+    for (let i = 0; i < len; i++) {
+        arr[i] = +prompt(`Введите элемент ${i + 1}:`);
+    }
+
+    let sortedArr = []; // Отсортированный массив
+
+    while (arr.length > 0) {
+        let minIndex = 0;
+
+        // Находим индекс минимального элемента
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
+            }
+        }
+
+        // Удаляем минимальный элемент из исходного массива и добавляем в отсортированный
+        sortedArr.push(arr[minIndex]);
+        arr.splice(minIndex, 1);
+    }
+
+    alert(sortedArr);
+}
         //  12 Создать динамический массив, запросить значение элементов, вывести массив, а после отсортировать его по убыванию. 
 
-        function task_12() {
+        
             let len = +prompt("сколько значений в массиве?")
             let arr = [];
             let i = 0;
@@ -263,6 +259,30 @@
             let num = +prompt("какое число")
             arr[num-1] = elem;
         }
+function task_11() {
+    let len = +prompt("Сколько значений в массиве?");
+    let arr = [];
+
+    for (let i = 0; i < len; i++) {
+        arr[i] = +prompt(`Введите элемент ${i + 1}:`);
+    }
+
+    let sortedArr = []; // Отсортированный массив
+
+    while (arr.length > 0) {
+        let minIndex = 0;
+
+        // Находим индекс минимального элемента
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
+            }
+        }
+
+        // Удаляем минимальный элемент из исходного массива и добавляем в отсортированный
+        sortedArr.push(arr[minIndex]);
+        arr.splice(minIndex, 1);
+    }
 
         //  13 Создать динамический символьный массив для английских букв, запросить значение элементов, вывести массив,
         //  а после отсортировать его таким образом, чтобы сперва были записаны гласные буквы, потом согласные.
@@ -330,13 +350,199 @@
             cout << "Положительных: " << posit << " Отрицательных: " << niga 
                  << " Нулей: " << zero << " Четных: " << two << " Нечетных: " << one << endl;
         }
-        
+        void task_2() {
+    vector<int> arr(5);
+    cout << "Введите 5 чисел: ";
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    vector<int> arr2;
+    for (int num : arr) {
+        arr2.push_back(-num);
+    }
+
+    cout << "Отрицательный массив: ";
+    for (int num : arr2) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+void task_3() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    swap(arr[0], arr[size - 1]);
+
+    cout << "Массив после замены: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+void task_4() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    int index1, index2;
+    cout << "Введите два индекса для замены (начиная с 1): ";
+    cin >> index1 >> index2;
+    
+    swap(arr[index1 - 1], arr[index2 - 1]);
+
+    cout << "Массив после замены: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+void task_5() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    reverse(arr.begin(), arr.end());
+
+    cout << "Развернутый массив: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+void task_6() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    int minNum = *min_element(arr.begin(), arr.end());
+
+    cout << "Минимальное число: " << minNum << endl;
+}
+void task_7() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    int maxNum = *max_element(arr.begin(), arr.end());
+
+    cout << "Максимальное число: " << maxNum << endl;
+}
+void task_8() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    int minIndex = min_element(arr.begin(), arr.end()) - arr.begin();
+    int maxIndex = max_element(arr.begin(), arr.end()) - arr.begin();
+
+    swap(arr[minIndex], arr[maxIndex]);
+
+    cout << "Массив после замены: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+void task_9() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    int index;
+    cout << "Какой элемент удалить (начиная с 1)? ";
+    cin >> index;
+    
+    arr.erase(arr.begin() + index - 1);
+
+    cout << "Массив после удаления: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+void task_10() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    int value, index;
+    cout << "Введите новое значение и индекс (начиная с 1), после которого вставить: ";
+    cin >> value >> index;
+    
+    arr.insert(arr.begin() + index, value);
+
+    cout << "Массив после вставки: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+void task_11() {
+    int size;
+    cout << "Сколько значений в массиве? ";
+    cin >> size;
+
+    vector<int> arr(size);
+    for (int &num : arr) {
+        cin >> num;
+    }
+
+    sort(arr.begin(), arr.end());
+
+    cout << "Отсортированный массив: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+
         int main() {
             task_1();
-            return 0;
         }  
     </pre>
     
 </body>
 
-</html>
+    </html>
