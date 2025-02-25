@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  1  Создать массив, запросить значение элементов, 
+        // вывести массив, а после посчитать количество положительных, отрицательных, четных, нечетных и нулей в этом массиве.
+
+        function task_1() {
+            let posit = 0;
+            let niga = 0;
+            let zero = 0;
+            let two = 0;
+            let one = 0;
+            let arr = [];
+
+            for (let i = 0; i < 10; i++) {
+                arr[i - 1] = +prompt("");
+                if (arr[i - 1] > 0) {
+                    posit++
+                }
+                else if (arr[i - 1] < 0) {
+                    niga++
+                }
+                else if (arr[i - 1] == 0) {
+                    zero++
+                }
+                if (arr[i - 1] % 2 == 0) {
+                    two++
+                }
+                if (arr[i - 1] % 2 !== 0) {
+                    one++
+                }
+            }
+            alert(`положительных ${posit}  отрицательных ${niga} нулей ${zero} четных ${two} нечет ${one}`);
+
+        }
+
+        //  2 Создать массив, запросить значение элементов, вывести массив, 
+        // а после создать новый массив, состоящий из отрицательных элементов первого.
+
+        function task_2() {
+            let arr = [+prompt(), +prompt(), +prompt(), +prompt(), +prompt()];
+            let i = 0;
+            alert(arr);
+            let arr2 = [];
+
+            while (i <= 4) {
+                arr2[i] = arr[i] * -1;
+                i++;
+            }
+            alert(arr2);
+        }
+
+        //  3 Создать динамический массив, запросить значение элементов, вывести массив,
+        //  а после перезаписать первый и последний элемент местами.
+
+        function task_3() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            let i = 0;
+            while (0 < len) {
+                arr[i] = +prompt("")
+                i++
+                len--;
+            }
+            let first = arr[0];
+            arr[0] = arr[i - 1];
+            arr[i - 1] = first;
+        }
+
+        //  4 Создать динамический массив, запросить значение элементов, вывести массив, а после перезаписать местами два элемента,
+        //  указанные пользователем.
+
+        function task_4() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            let i = 0;
+            while (0 < len) {
+                arr[i] = +prompt("")
+                i++
+                len--;
+            }
+
+            let num1 = +prompt("какое 1 значение");
+            let num2 = +prompt("какое 2 значение");
+            j = arr[num1 - 1]
+            arr[num1 - 1] = arr[num2 - 1];
+            arr[num2 - 1] = j;
+
+        }
+
+        //  5 Создать динамический массив, запросить значение элементов, вывести массив,
+        // а после полностью перезаписать массив в обратном порядке.
+
+        function task_5() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            let i = len / 2 | 0;
+            let q = 0
+
+            while (0 < len) {
+                arr[q] = +prompt("");
+                len--;
+                q++;
+            }
+            alert(arr)
+
+            let j;
+            q--;
+            while (0 < i) {
+                j = arr[len];
+                arr[len] = arr[q];
+                arr[q] = j;
+
+                q--;
+                i--;
+                len++
+            }
+            alert(arr)
+        }
+
+        //  6 Создать динамический массив, запросить значение элементов, вывести массив, а после найти наименьшее число в массиве.
+        function task_6() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            arr[0] = +prompt();
+            let i = 1;
+            let min = arr[0];
+            do {
+                arr[i] = +prompt("");
+                if (min > arr[i]) {
+                    min = arr[i];
+                }
+                i++;
+                len--;
+            } while (1 < len)
+            alert(arr);
+            alert(min);
+        }
+
+        //  7 Создать динамический массив, запросить значение элементов, вывести массив, а после найти наибольшее число в массиве.
+
+        function task_7() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            arr[0] = +prompt();
+            let i = 1;
+            let max = arr[0];
+            do {
+                arr[i] = +prompt("");
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+                i++;
+                len--;
+            } while (1 < len)
+            alert(arr);
+            alert(max);
+        }
+
+
+        //  8 Создать динамический массив, запросить значение элементов, вывести массив,
+        //  а после поменять местами наибольшее и наименьшее значение. 
+
+        function task_8() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            arr[0] = +prompt();
+            let i = 1;
+            let max = arr[0];
+            let min = arr[0];
+            let max_index = 0;
+            let min_index = 0;
+            do {
+                arr[i] = +prompt("");
+                if (min > arr[i]) {
+                    min = arr[i];
+                    min_index = i;
+                }
+                if (max < arr[i]) {
+                    max = arr[i];
+                    max_index = i;
+                }
+                i++;
+                len--;
+            } while (1 < len)
+            alert(arr);
+
+            let j = arr[min_index];
+            arr[min_index] = arr[max_index];
+            arr[max_index] = j;
+
+            alert(arr);
+        }
+
+        //  9 Создать динамический массив, запросить значение элементов, вывести массив, а после удалить выбранный пользователем элемент.
+
+        function task_9() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            let i = 0;
+            while (0 < len) {
+                arr[i] = +prompt("")
+                i++
+                len--;
+            }
+            alert(arr)
+            let num = +prompt("какое число")
+            while (num < arr.length) {
+                arr[num - 1] = arr[num];
+                num++;
+            }
+            arr.length--;
+            alert(arr)
+        }
+
+        //  10 Создать динамический массив, запросить значение элементов, вывести массив,
+        //  а после запросить новое значение и после какого элемента его добавить.
+
+        function task_10() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            let i = 0;
+            while (0 < len) {
+                arr[i] = +prompt("")
+                i++
+                len--;
+            }
+            alert(arr)
+
+            let elem = +prompt("значение");
+            let num = +prompt("какое число");
+            q = arr.length + 1
+            let j = num;
+            arr.length++;
+            while (num < arr.length) {
+                arr[q - 1] = arr[q - 2];
+                num++;
+                q--;
+            }
+            arr[j] = elem;
+            alert(arr)
+        }
+        //  11 Создать динамический массив, запросить значение элементов, вывести массив, а после отсортировать его по возрастанию.
+
+        function task_11() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            let i = 0;
+            while (0 < len) {
+                arr[i] = +prompt("")
+                i++
+                len--;
+            }
+            alert(arr)
+
+            let j;
+            let q;
+            while (len < arr.length) {
+                q = len;
+                while (arr[q] > arr[q + 1] && q > -1) {
+                    j = arr[q];
+                    arr[q] = arr[q + 1];
+                    arr[q + 1] = j;
+                    q--;
+                }
+                len++;
+            }
+            alert(arr)
+        }
+
+        //  12 Создать динамический массив, запросить значение элементов, вывести массив, а после отсортировать его по убыванию. 
+
+        function task_12() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            let i = 0;
+            while (0 < len) {
+                arr[i] = +prompt("")
+                i++
+                len--;
+            }
+            alert(arr);
+
+
+            //   ХОАРА
+
+
+            //   ВЫБОР
+
+            let q = 0;
+            let min = arr[0], index = 0;
+            while (len < arr.length) {
+                q = len;
+                min = arr[len];
+                index = len
+                while (q < arr.length) {
+                    if (min > arr[q]) {
+                        index = q;
+                        min = arr[q];
+                    }
+                    q++;
+                }
+                arr[index] = arr[len]
+                arr[len] = min;
+                len++;
+            }
+
+
+            //   ПУЗЫРЬ 
+
+            // let j;
+            // let ok = true;
+            // while(ok) {
+            //     ok = false;
+            //     len = 0;
+            //     while (len < arr.length) {
+            //         if (arr[len] > arr[len + 1]) {
+            //             j = arr[len];
+            //             arr[len] = arr[len + 1];
+            //             arr[len + 1] = j;
+            //             ok = true;
+            //         }
+            //         len++;
+            //     }
+            // }
+
+            alert(arr);
+        }
+
+        //  13 Создать динамический символьный массив для английских букв, запросить значение элементов, вывести массив,
+        //  а после отсортировать его таким образом, чтобы сперва были записаны гласные буквы, потом согласные.
+
+        function task_13() {
+            let len = +prompt("сколько значений в массиве?")
+            let arr = [];
+            let i = 0;
+            while (0 < len) {
+                arr[i] = prompt("")
+                i++
+                len--;
+            }
+            alert(arr);
+
+            let j;
+            while (len < arr.length) {
+                if ((arr[len] != "а" || arr[len] != "у" || arr[len] != "о" || arr[len] != "ы" || arr[len] != "э" || arr[len] != "я" ||
+                    arr[len] != "ю" || arr[len] != "ё" || arr[len] != "е" || arr[len] != "и") &&
+                    (arr[len + 1] == "а" || arr[len + 1] == "у" || arr[len + 1] == "о" || arr[len + 1] == "ы" ||
+                        arr[len + 1] == "э" || arr[len + 1] == "я" || arr[len + 1] == "ю" || arr[len + 1] == "ё" ||
+                        arr[len + 1] == "е" || arr[len + 1] == "и")) {
+                    j = arr[len];
+                    arr[len] = arr[len + 1];
+                    arr[len + 1] = arr[i - 1];
+                    arr[i - 1] = j;
+                    i--;
+                }
+                else {
+                    len++;
+                }
+            }
+            alert(arr);
+        }
+
+        //  14 Запросить у человека число, посчитать сколько в нем цифр, 
+        // создать динамический массив на данное количество цифр и занести отдельные цифры числа в созданный массив. Вывести его.
+
+        function task_14() {
+            let len = +prompt("число");
+            let ten = 1;
+            let i = 0;
+            let num = 10
+            while (num > 9) {
+                num = len / ten | 0;
+                ten *= 10;
+                i++
+            }
+            let arr = [];
+            let j = 0;
+            while (ten > 1) {
+                ten /= 10;
+                arr[j] = (len % (ten * 10)) / ten | 0;
+                j++;
+            }
+            alert(arr);
+        }
+
+    </script>
+    <pre>
+
+        #include <iostream>
+            using namespace std;
+            
+            //  1  Создать массив, запросить значение элементов, 
+            // вывести массив, а после посчитать количество положительных, отрицательных, четных, нечетных и нулей в этом массиве.
+    
+            void task_1() {
+                    int posit = 0, niga = 0, zero = 0, two = 0, one = 0;
+                    int arr[10];
+                
+                    for (int i = 0; i < 10; i++) {
+                        cout << "Введите число: ";
+                        cin >> arr[i];
+                
+                        if (arr[i] > 0) {
+                            posit++;
+                        } else if (arr[i] < 0) {
+                            niga++;
+                        } else {
+                            zero++;
+                        }
+                
+                        if (arr[i] % 2 == 0) {
+                            two++;
+                        } else {
+                            one++;
+                        }
+                    }
+                
+                    cout << "Положительных: " << posit << " Отрицательных: " << niga 
+                         << " Нулей: " << zero << " Четных: " << two << " Нечетных: " << one << endl;
+                }
+    
+            //  2 Создать массив, запросить значение элементов, вывести массив, 
+            // а после создать новый массив, состоящий из отрицательных элементов первого.
+    
+           void task_2() {
+    int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cout << "Введите число: ";
+        cin >> arr[i];
+    }
+
+    for (int i = 0; i < 5; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    int arr2[5];
+    int i = 0;
+
+    while (i <= 4) {
+        arr2[i] = arr[i] * (-1);
+        i++;
+    }
+
+    for (int i = 0; i < 5; i++) {
+        cout << arr2[i] << " ";
+    }
+    cout << endl;
+}
+    
+            //  3 Создать динамический массив, запросить значение элементов, вывести массив,
+            //  а после перезаписать первый и последний элемент местами.
+    
+            void task_3() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                int i = 0;
+                while (0 < len) {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    i++;
+                    len--;
+                }
+                int first = arr[0];
+                arr[0] = arr[i - 1];
+                arr[i - 1] = first;
+            }
+    
+            //  4 Создать динамический массив, запросить значение элементов, вывести массив, а после перезаписать местами два элемента,
+            //  указанные пользователем.
+    
+            void task_4() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                int i = 0;
+                while (0 < len) {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    i++;
+                    len--;
+                }
+    
+                int num1;
+                cout << "какое число";
+                cin >> num1;
+                int num2;
+                cout << "второе число";
+                cin >> num2;
+                int j = arr[num1 - 1];
+                arr[num1 - 1] = arr[num2 - 1];
+                arr[num2 - 1] = j;
+    
+            }
+    
+            //  5 Создать динамический массив, запросить значение элементов, вывести массив,
+            // а после полностью перезаписать массив в обратном порядке.
+    
+            void task_5() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                int i = len / 2 ;
+                int q = 0;
+    
+                while (0 < len) {
+                    cout << "чисел; ";
+                    cin >> arr[q];
+                    len--;
+                    q++;
+                }
+                for (int j = 0; j < q; j++) {
+                     
+    }
+                      cout << endl;
+    
+                int j;
+                q--;
+                while (0 < i) {
+                    j = arr[len];
+                    arr[len] = arr[q];
+                    arr[q] = j;
+    
+                    q--;
+                    i--;
+                    len++;
+                }
+                for (int j = 0; j <= len*2; j++) {
+        
+    }
+    cout << endl;
+            }
+    
+            //  6 Создать динамический массив, запросить значение элементов, вывести массив, а после найти наименьшее число в массиве.
+            void task_6() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                cout << "чисел; ";
+                    cin >> arr[0];
+                int i = 1;
+                int min = arr[0];
+                do {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    if (min > arr[i]) {
+                        min = arr[i];
+                    }
+                    i++;
+                    len--;
+                } while (1 < len);
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+                cout << min;
+            }
+            
+            //  7 Создать динамический массив, запросить значение элементов, вывести массив, а после найти наибольшее число в массиве.
+    
+            void task_7() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                cout << "чисел; ";
+                    cin >> arr[0];
+                int i = 1;
+                int max = arr[0];
+                do {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    if (max < arr[i]) {
+                        max = arr[i];
+                    }
+                    i++;
+                    len--;
+                } while (1 < len);
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+                cout << (max);
+            }
+    
+    
+            //  8 Создать динамический массив, запросить значение элементов, вывести массив,
+            //  а после поменять местами наибольшее и наименьшее значение. 
+    
+            void task_8() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                cout << "чисел; ";
+                    cin >> arr[0];
+                int i = 1;
+                int max = arr[0];
+                int min = arr[0];
+                int max_index = 0;
+                int min_index = 0;
+                do {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    if (min > arr[i]) {
+                        min = arr[i];
+                        min_index = i;
+                    }
+                    if (max < arr[i]) {
+                        max = arr[i];
+                        max_index = i;
+                    }
+                    i++;
+                    len--;
+                } while (1 < len);
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+    
+                int j = arr[min_index];
+                arr[min_index] = arr[max_index];
+                arr[max_index] = j;
+    
+                for (int j = 0; j < i; j++) {
+                        cout << arr[j] << " ";
+                        }
+                     cout << endl;
+            }
+    
+            //  9 Создать динамический массив, запросить значение элементов, вывести массив, а после удалить выбранный пользователем элемент.
+    
+            void task_9() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                int i = 0;
+                while (0 < len) {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    i++;
+                    len--;
+                }
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+                int num;
+                cout << "номер чисел; ";
+                cin >> num;
+                while (num < i) {
+                    arr[num - 1] = arr[num];
+                    num++;
+                }
+                i--;
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+            }
+    
+            //  10 Создать динамический массив, запросить значение элементов, вывести массив,
+            //  а после запросить новое значение и после какого элемента его добавить.
+    
+            void task_10() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                int i = 0;
+                while (0 < len) {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    i++;
+                    len--;
+                }
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+                
+                int elem;
+                cout << "какое чисел; ";
+                cin >> elem;
+                int num;
+                cout << "номер чисел; ";
+                cin >> num;
+                int q = i + 1;
+                int j = num-1;
+                i++;
+                while (num < i) {
+                    arr[q - 1] = arr[q - 2];
+                    num++;
+                    q--;
+                }
+                arr[j] = elem;
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+            }
+            //  11 Создать динамический массив, запросить значение элементов, вывести массив, а после отсортировать его по возрастанию.
+    
+            void task_11() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                int i = 0;
+                while (0 < len) {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    i++;
+                    len--;
+                }
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+    
+                int j;
+                int q;
+                while (len < i) {
+                    q = len-1;
+                    while (arr[q] > arr[q + 1] && q > -1) {
+                        j = arr[q];
+                        arr[q] = arr[q + 1];
+                        arr[q + 1] = j;
+                        q--;
+                    }
+                    len++;
+                }
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+            }
+    
+            //  12 Создать динамический массив, запросить значение элементов, вывести массив, а после отсортировать его по убыванию. 
+    
+            void task_12() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                int i = 0;
+                while (0 < len) {
+                    cout << "чисел; ";
+                    cin >> arr[i];
+                    i++;
+                    len--;
+                }
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+    
+    
+                //   ХОАРА
+    
+    
+                //   ВЫБОР
+    
+                // int q = 0;
+                // int max = arr[0], index = 0;
+                // while (len < i) {
+                //     q = len;
+                //     max = arr[len];
+                //     index = len;
+                //     while (q < i) {
+                //         if (max < arr[q]) {
+                //             index = q;
+                //             max = arr[q];
+                //         }
+                //         q++;
+                //     }
+                //     arr[index] = arr[len];
+                //     arr[len] = max;
+                //     len++;
+                // }
+    
+    
+                //   ПУЗЫРЬ 
+    
+                int j;
+                int ok = true;
+                while(ok) {
+                    ok = false;
+                    len = 0;
+                    while (len < i-1) {
+                        if (arr[len] < arr[len + 1]) {
+                            j = arr[len];
+                            arr[len] = arr[len + 1];
+                            arr[len + 1] = j;
+                            ok = true;
+                        }
+                        len++;
+                    }
+                }
+                
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+            }
+    
+            //  13 Создать динамический символьный массив для английских букв, запросить значение элементов, вывести массив,
+            //  а после отсортировать его таким образом, чтобы сперва были записаны гласные буквы, потом согласные.
+    
+            void task_13() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int* arr = new int[len];
+                int i = 0;
+                while (0 < len) {
+                    cout << "сколько чисел; ";
+                    cin >> arr[i];
+                    i++;
+                    len--;
+                }
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+    
+                int j;
+                while (len < i) {
+                    if ((arr[len] != L'а' && arr[len] != L'у' && arr[len] != L'о' && arr[len] != L'ы' && arr[len] != L'э' && arr[len] != L'я' &&
+         arr[len] != L'ю' && arr[len] != L'ё' && arr[len] != L'е' && arr[len] != L'и') &&
+        (arr[len + 1] == L'а' || arr[len + 1] == L'у' || arr[len + 1] == L'о' || arr[len + 1] == L'ы' ||
+         arr[len + 1] == L'э' || arr[len + 1] == L'я' || arr[len + 1] == L'ю' || arr[len + 1] == L'ё' ||
+         arr[len + 1] == L'е' || arr[len + 1] == L'и')){
+ 
+                        j = arr[len];
+                        arr[len] = arr[len + 1];
+                        arr[len + 1] = arr[i - 1];
+                        arr[i - 1] = j;
+                        i--;
+                    }
+                    else {
+                        len++;
+                    }
+                }
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+            }
+    
+            //  14 Запросить у человека число, посчитать сколько в нем цифр, 
+            // создать динамический массив на данное количество цифр и занести отдельные цифры числа в созданный массив. Вывести его.
+    
+            void task_14() {
+                int len;
+                cout << "сколько чисел; ";
+                cin >> len;
+                int ten = 1;
+                int i = 0;
+                int num = 10;
+                while (num > 9) {
+                    num = len / ten ;
+                    ten *= 10;
+                    i++;
+                }
+                int* arr = new int[len];
+                int j = 0;
+                while (ten > 1) {
+                    ten /= 10;
+                    arr[j] = (len%(ten*10))/ten ;
+                    j++;
+                }
+                for (int j = 0; j < i; j++) {
+        cout << arr[j] << " ";
+    }
+    cout << endl;
+            }
+            
+            int main() {
+                task_14();
+            }
+    </pre>
+</body>
+
+</html>
