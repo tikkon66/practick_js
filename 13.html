@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // papapa1
+
+        let buyList = [
+            product1 = {
+                name: "cola",
+                count: 2,
+                bought: false
+            },
+            
+            product2 = {
+                name: "bread",
+                count: 1,
+                bought: false
+            },
+
+            product3 = {
+                name: "milk",
+                count: 2,
+                bought: false
+            },
+        ]
+        
+
+        // TASK 1
+        function showList(arr) {
+            let list = "";
+
+            for (let i = 0; i < 3; i++) {
+                if (arr[i].bought) {
+                    list += arr[i].name + ", ";
+                }
+            }
+
+            for (let i = 0; i < 3; i++) {
+                if (!arr[i].bought) {
+                    list += arr[i].name + ", ";
+                }
+            }
+
+            alert(list);
+        }
+
+
+        // TASK 2
+        function addCount(arr, name, plus) {
+            for (let i = 0; i < 3; i++) {
+                if (arr[i].name == name) {
+                    arr[i].count += plus;
+                }
+            }
+
+            console.log(arr);
+        }
+
+
+        // TASK 3
+        function buy(arr, name) {
+            for (let i = 0; i < 3; i++) {
+                if (arr[i].name == name) {
+                    arr[i].bought = true;
+                }
+            }
+        }
+
+
+        // apapapa2
+
+        let cabinet = [
+            cabinet1 = {
+                name: 1,
+                place: 17,
+                facult: "химия"
+            },
+
+            cabinet2 = {
+                name: 2,
+                place: 14,
+                facult: "алгебра"
+            },
+
+            cabinet3 = {
+                name: 3,
+                place: 18,
+                facult: "физика"
+            }
+        ]
+
+        function show(arr) {
+            console.log(arr);
+        }
+        
+        function findAuditory(arr, facult) {
+            for (let i = 0; i < 3; i++) {
+                if (arr[i].facult == facult) {
+                    alert("нужная аудитория" + arr[i].name)
+                }
+            }
+        }
+
+        let group = {
+                name: 1,
+                count: 14,
+                facult: "алгебра"
+            }
+
+
+        function fixAudit(audit, group) {
+            for (let i = 0; i < 3; i++) {
+                if (audit[i].place >= group.count && audit[i].facult == group.facult) {
+                    alert("нужная аудитория" + arr[i].name)
+                }
+            }
+        }
+
+        function sortAudit(arr) {
+            let copy;
+            for (let i = 0; i < 2; i++) {
+                j++;
+                while (audit[j + 1] < audit[j] && j < 2) {
+                    copy = audit[j + 1];
+                    audit[j + 1] = audit[j];
+                    audit[j] = audit[j + 1];
+                    j++;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

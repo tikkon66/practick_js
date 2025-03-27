@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1) Создать двумерный массив NN-размерности, Заполнить числами и вывести его в виде матрицы. Затем Заполнить нулями столбец, выбранный пользователем, и вывести измененную матрицу.
+
+function task_1() {
+    let i = 0, j = 0, a = [[],[],[]];
+    
+    while (i < 3) {
+        j = 0;
+        alert(i + 1 + ": столб, ");
+        while (j < 3) {
+            
+            a[i][j] = +promt(j+1 + ": строка;")
+            
+            j++;
+        }
+        i++;
+    }
+    
+    console.log(a)
+    
+    let n = +prompt("какая строка; ");
+    
+    j = 0;
+    while (j < 3) {
+        a[n-1][j] = 0;
+        j++;
+    }
+    
+    console.log(a)
+}
+
+// 2) Создать двумерный массив NN-размерности, Заполнить числами и вывести его в виде матрицы. Затем) Заполнить нулями строку, выбранную пользователем, и вывести измененную матрицу.
+
+function task_2() {
+    let i = 0, j = 0, a = [[],[],[]];
+    
+    while (i < 3) {
+        j = 0;
+        alert(i + 1 + ": столб, ") ;
+        while (j < 3) {
+            a[i][j] = +promt(j+1 + ": строка;")
+            j++;
+        }
+        i++;
+    }
+    
+    
+    console.log(a)
+    
+    let m = +prompt("какая строка; ");
+    
+    i = 0;
+    while (i < 3) {
+        a[i][m-1] = 0;
+        i++;
+    }
+    
+    
+    console.log(a)
+}
+
+// 3) Создать двумерный массив NN-размерности, Заполнить числами и вывести его в виде матрицы. Затем Заполнить нулями прямую диагональ, и вывести измененную матрицу.
+
+function task_3() {
+    let i = 0, j = 0, a = [[],[],[]];
+    
+    while (i < 3) {
+        j = 0;
+        cout + i + 1 + ": столб, ";
+        while (j < 3) {
+            a[i][j] = +promt(j+1 + ": строка;")
+            
+            j++;
+        }
+        i++;
+    }
+    
+    
+    console.log(a)
+    
+    i = 0;
+    j = 0;
+    while (i < 3) {
+        a[i][j] = 0;
+        i++;
+        j++;
+    }
+    
+    
+    console.log(a)
+}
+
+// 4) Создать двумерный массив NN-размерности, Заполнить числами и вывести его в виде матрицы. Затем Заполнить нулями обратную диагональ, и вывести измененную матрицу. 
+
+function task_4() {
+    let i = 0, j = 0, a = [[],[],[]];
+    
+    while (i < 3) {
+        j = 0;
+        cout + i + 1 + ": столб, ";
+        while (j < 3) {
+            a[i][j] = +promt(j+1 + ": строка;")
+            
+            j++;
+        }
+        i++;
+    }
+    
+    
+    console.log(a)
+    
+    j = 0;
+    i--;
+    while (j < 3) {
+        a[i][j] = 0;
+        i--;
+        j++;
+    }
+    
+    
+    console.log(a)
+}
+
+// 5) Запросить у пользователя предел таблицы умножения и вывести таблицу в виде матрицы, до предела
+
+function task_5() {
+    let i = 0, j = 0, q, m, n, a = [[],[],[],[],[],[],[],[],[],[]];
+    m = +prompt("какая строка; ");
+    n = +prompt("какая строка; ");
+    
+    while (i < m) {
+        j = 0;
+        while (j < n) {
+            a[i][j] = (i+1) * (j+1);
+            j++;
+        }
+        i++;
+    }
+    
+    j = 0;
+    while (j < n) {
+        i = 0;
+        while (i < m) {
+            console.log(i+1 + " * " + j+1 + " = " + a[i][j]);
+            i++;
+        }
+        
+            j++;
+    }
+    
+}
+
+// 6) Создать двумерный массив NN-размерности, Заполнить его прямой числовой последовательностью от 1, по спирали. 
+
+
+ function task_6() {
+    let i = 0, j, m_min = 0, n_min = 0, m_max, n_max, k;
+    m = +prompt("какой столб; ");
+    n = +prompt("какая строка; ");
+    
+    let m = m_max;
+    let n = n_max;
+    n_max--;
+    m_max--;
+    k = n * m;
+    
+    let matrix = [];
+    for (let i = 0; i < rows; i++) {
+      matrix[i] = [];
+      for (let j = 0; j < cols; j++) {
+        matrix[i][j] = i * cols + j + 1;
+      }
+    }
+        
+    while (k > 0){
+        
+        j = n_min;
+        while (j <= n_max) {
+            dinamic_array[i][j] = k;
+            k--;
+            j++;
+        }
+            j--;
+        
+        m_min++;
+        i = m_min;
+        while (i <= m_max && k > 0){
+            dinamic_array[i][j] = k;
+            k--;
+            i++;
+        }
+            i--;
+        
+        n_max--;
+        j = n_max;
+        while (j >= n_min && k > 0){
+            dinamic_array[i][j] = k;
+            k--;
+            j--;
+        }
+            j++;
+        
+        m_max--;
+        i = m_max;
+        while (i >= m_min && k > 0) {
+            dinamic_array[i][j] = k;
+            k--;
+            i--;
+        }
+            i++;
+        
+        n_min++;
+    }
+        // !
+    
+    for (let q = 0; q < m; q++){
+        for (let w = 0; w < n; w++){
+            cout + dinamic_array[q][w] + "\t";
+        }
+        }
+ }
+
+
+// 7) Создать двумерный массив NN-размерности, найти строки с максимальным и минимальным элементом и поменять их местами, если строки совпадают, обнулить их. Числа генерировать случайно.
+
+function task_7() {
+    let n, m, min, min_m = 0, min_n = 0, max, max_m = 0, max_n = 0;
+    m = prompt("сколько столбов; ");
+    n = prompt("сколько строк; ");
+
+    let arr = [];
+    
+    for(let i = 0; i < n; i++) {
+      arr[i] = []; 
+      for(let j = 0; j < m; j++) {
+        arr[i][j] = `Row ${i}, Col ${j}`; 
+      }
+    }      
+
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            arr[i][j] = Math.floor(Math.random() * (100)) + 1;
+        }
+        
+    }
+    
+    console.log(arr);
+    
+    min = arr[0][0];
+    max = arr[0][0];
+    
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (min > arr[i][j]) {
+                min = arr[i][j];
+                min_m = i;
+                min_n = j;
+            }
+            
+            if (max < arr[i][j]) {
+                max = arr[i][j];
+                max_m = i;
+                max_n = j;
+            }
+        }
+    }
+    
+    if (max == min) {
+        arr[min_m][min_n] = 0;
+        arr[max_m][max_n] = 0;
+    }
+    else {
+        arr[min_m][min_n] = max;
+        arr[max_m][max_n] = min;
+    }
+    
+    console.log(arr);
+}
+
+
+// 8) Создать двумерный (пропорциональный) массив NN-размерности, Заполнить случайными числами и вывести его в виде матрицы. Затем отсортировать матрицу (верхний левый угол наименьшее число, нижний правый угол наибольшее число) и вывести измененную матрицу. 
+
+// function task_8() {
+//     let arr[7][7];
+    
+//     for(let i = 0; i < 7; i++) {
+//         for (let j = 0; j < 7; j++) {
+//             arr[i][j] = rand() % 99;
+//         }
+//     }
+    
+//     for (let i = 0; i < 7; i++) {
+//         for (let j = 0; j < 7; j++) {
+//             cout + arr[i][j] + "\t";
+//         }
+//         }
+        
+//     let m = 0, n = 0, ok = true, min_m = 0, min_n = 0, min;
+    
+//     for (let k = 0; k < 49; k++) {
+//         for (let i = m; i < 7; i++) {
+//             for (let j = n; j < 7; j++) {
+//                 if (arr[min_m][min_n] > arr[i][j]) {
+//                     min_m = i;
+//                     min_n = j;
+//                 }
+//             }
+//         }
+        
+//         min = arr[min_m][min_n];
+//         arr[min_m][min_n] = arr[m][n];
+//         arr[m][n] = min;
+        
+//         if (m == 0 && ok) {
+//             n++;
+//             ok = false;
+//         }
+//         else if (ok) {
+//             m--;
+//             n++;
+//         }
+//         else if (n == 0 && !ok) {
+//             m++;
+//             ok = true;
+//         }
+//         else if (!ok) {
+//             m++;
+//             n--;
+//         }
+//     }
+    
+//     for (let i = 0; i < 7; i++) {
+//         for (let j = 0; j < 7; j++) {
+//             cout + arr[i][j] + "\t";
+//         }
+//         }
+    
+// }
+// 9)    1. Вывод всех данных в соответствии:
+// первый артикул, первый товар, первая цена, первое количество
+// второй артикул, второй товар, второй цена, второй количество
+// … и т.д.
+
+// 10) Добавление нового товара (артикул, название, цена, количество). 
+
+// 11) Изменение товара по артикулу (название, цена, количество).
+
+// 12) Удаление товара по артикулу.
+    </script>
+
+    <pre>
+    #include <iostream>
+using namespace std;
+
+// 1) Создать двумерный массив NN-размерности, Заполнить числами и вывести его в виде матрицы. Затем Заполнить нулями столбец, выбранный пользователем, и вывести измененную матрицу.
+
+void task_1() {
+    int i = 0, j = 0, a[3][3];
+    
+    while (i < 3) {
+        j = 0;
+        cout << i + 1 << ": столб, ";
+        while (j < 3) {
+            cout << j + 1 << ": строка; ";
+            cin >> a[i][j];
+            j++;
+        }
+        i++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < 3) {
+        i = 0;
+        while (i < 3) {
+            cout << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+    
+    int n;
+    cout << "какая строка; ";
+    cin >> n;
+    
+    j = 0;
+    while (j < 3) {
+        a[n-1][j] = 0;
+        j++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < 3) {
+        i = 0;
+        while (i < 3) {
+            cout << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+}
+
+// 2) Создать двумерный массив NN-размерности, Заполнить числами и вывести его в виде матрицы. Затем) Заполнить нулями строку, выбранную пользователем, и вывести измененную матрицу.
+
+void task_2() {
+    int i = 0, j = 0, a[3][3];
+    
+    while (i < 3) {
+        j = 0;
+        cout << i + 1 << ": столб, ";
+        while (j < 3) {
+            cout << j + 1 << ": строка; ";
+            cin >> a[i][j];
+            j++;
+        }
+        i++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < 3) {
+        i = 0;
+        while (i < 3) {
+            cout << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+    
+    int m;
+    cout << "какой столб; ";
+    cin >> m;
+    
+    i = 0;
+    while (i < 3) {
+        a[i][m-1] = 0;
+        i++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < 3) {
+        i = 0;
+        while (i < 3) {
+            cout << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+}
+
+// 3) Создать двумерный массив NN-размерности, Заполнить числами и вывести его в виде матрицы. Затем Заполнить нулями прямую диагональ, и вывести измененную матрицу.
+
+void task_3() {
+    int i = 0, j = 0, a[3][3];
+    
+    while (i < 3) {
+        j = 0;
+        cout << i + 1 << ": столб, ";
+        while (j < 3) {
+            cout << j + 1 << ": строка; ";
+            cin >> a[i][j];
+            j++;
+        }
+        i++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < 3) {
+        i = 0;
+        while (i < 3) {
+            cout << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+    
+    i = 0;
+    j = 0;
+    while (i < 3) {
+        a[i][j] = 0;
+        i++;
+        j++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < 3) {
+        i = 0;
+        while (i < 3) {
+            cout << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+}
+
+// 4) Создать двумерный массив NN-размерности, Заполнить числами и вывести его в виде матрицы. Затем Заполнить нулями обратную диагональ, и вывести измененную матрицу. 
+
+void task_4() {
+    int i = 0, j = 0, a[3][3];
+    
+    while (i < 3) {
+        j = 0;
+        cout << i + 1 << ": столб, ";
+        while (j < 3) {
+            cout << j + 1 << ": строка; ";
+            cin >> a[i][j];
+            j++;
+        }
+        i++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < 3) {
+        i = 0;
+        while (i < 3) {
+            cout << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+    
+    j = 0;
+    i--;
+    while (j < 3) {
+        a[i][j] = 0;
+        i--;
+        j++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < 3) {
+        i = 0;
+        while (i < 3) {
+            cout << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+}
+
+// 5) Запросить у пользователя предел таблицы умножения и вывести таблицу в виде матрицы, до предела
+
+void task_5() {
+    int i = 0, j = 0, q, m, n, a[10][10];
+    cout << "Предел первого числа до 10; ";
+    cin >> m;
+    cout << "Предел второго числа до 10; ";
+    cin >> n;
+    
+    while (i < m) {
+        j = 0;
+        while (j < n) {
+            a[i][j] = (i+1) * (j+1);
+            j++;
+        }
+        i++;
+    }
+    cout << endl;
+    
+    j = 0;
+    while (j < n) {
+        i = 0;
+        while (i < m) {
+            cout << i+1 << " * " << j+1 << " = " << a[i][j] << "\t";
+            i++;
+        }
+        cout << endl;
+        j++;
+    }
+    
+}
+
+// 6) Создать двумерный массив NN-размерности, Заполнить его прямой числовой последовательностью от 1, по спирали. 
+
+
+ void task_6() {
+    int i = 0, j, m_min = 0, n_min = 0, m_max, n_max, k;
+    cout << "Предел стоба числа; ";
+    cin >> m_max;
+    cout << "Предел строки числа; ";
+    cin >> n_max;
+    cout << endl;
+    
+    
+    int m = m_max;
+    int n = n_max;
+    n_max--;
+    m_max--;
+    k = n * m;
+    
+     int **dinamic_array = new int* [m];   // создаем 
+     for (int i = 0; i < m; i++) {          // двумерный
+        dinamic_array[i] = new int [n]; // массив 
+        }  
+        
+    while (k > 0){
+        
+        j = n_min;
+        while (j <= n_max) {
+            dinamic_array[i][j] = k;
+            k--;
+            j++;
+        }
+            j--;
+        
+        m_min++;
+        i = m_min;
+        while (i <= m_max && k > 0){
+            dinamic_array[i][j] = k;
+            k--;
+            i++;
+        }
+            i--;
+        
+        n_max--;
+        j = n_max;
+        while (j >= n_min && k > 0){
+            dinamic_array[i][j] = k;
+            k--;
+            j--;
+        }
+            j++;
+        
+        m_max--;
+        i = m_max;
+        while (i >= m_min && k > 0) {
+            dinamic_array[i][j] = k;
+            k--;
+            i--;
+        }
+            i++;
+        
+        n_min++;
+    }
+        // !
+    
+    for (int q = 0; q < m; q++){
+        for (int w = 0; w < n; w++){
+            cout << dinamic_array[q][w] << "\t";
+        }
+        cout << endl;
+    }
+ }
+
+
+// 7) Создать двумерный массив NN-размерности, найти строки с максимальным и минимальным элементом и поменять их местами, если строки совпадают, обнулить их. Числа генерировать случайно.
+
+void task_7() {
+    int n, m, min, min_m = 0, min_n = 0, max, max_m = 0, max_n = 0;
+    cout << "сколько столбов; ";
+    cin >> m;
+    cout << "сколько строк; ";
+    cin >> n;
+    cout << endl;
+    
+    int **arr = new int*[m];
+    for (int i = 0; i < m; i++) {
+        arr[i] = new int [n];
+    }
+            
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            arr[i][j] = rand() % 99;
+        }
+    }
+    
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    
+    min = arr[0][0];
+    max = arr[0][0];
+    
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (min > arr[i][j]) {
+                min = arr[i][j];
+                min_m = i;
+                min_n = j;
+            }
+            
+            if (max < arr[i][j]) {
+                max = arr[i][j];
+                max_m = i;
+                max_n = j;
+            }
+        }
+    }
+    
+    if (max == min) {
+        arr[min_m][min_n] = 0;
+        arr[max_m][max_n] = 0;
+    }
+    else {
+        arr[min_m][min_n] = max;
+        arr[max_m][max_n] = min;
+    }
+    
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+
+
+// 8) Создать двумерный (пропорциональный) массив NN-размерности, Заполнить случайными числами и вывести его в виде матрицы. Затем отсортировать матрицу (верхний левый угол наименьшее число, нижний правый угол наибольшее число) и вывести измененную матрицу. 
+
+void task_8() {
+    int arr[7][7];
+    
+    for(int i = 0; i < 7; i++) {
+        for (int j = 0; j < 7; j++) {
+            arr[i][j] = rand() % 99;
+        }
+    }
+    
+    for (int i = 0; i < 7; i++) {
+        for (int j = 0; j < 7; j++) {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+        cout << endl;
+    
+    int m = 0, n = 0, ok = true, min_m = 0, min_n = 0, min;
+    
+    for (int k = 0; k < 49; k++) {
+        for (int i = m; i < 7; i++) {
+            for (int j = n; j < 7; j++) {
+                if (arr[min_m][min_n] > arr[i][j]) {
+                    min_m = i;
+                    min_n = j;
+                }
+            }
+        }
+        
+        min = arr[min_m][min_n];
+        arr[min_m][min_n] = arr[m][n];
+        arr[m][n] = min;
+        
+        if (m == 0 && ok) {
+            n++;
+            ok = false;
+        }
+        else if (ok) {
+            m--;
+            n++;
+        }
+        else if (n == 0 && !ok) {
+            m++;
+            ok = true;
+        }
+        else if (!ok) {
+            m++;
+            n--;
+        }
+    }
+    
+    for (int i = 0; i < 7; i++) {
+        for (int j = 0; j < 7; j++) {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    
+}
+
+int main() {
+    task_8();
+}
+// 9)    1. Вывод всех данных в соответствии:
+// первый артикул, первый товар, первая цена, первое количество
+// второй артикул, второй товар, второй цена, второй количество
+// … и void
+// 12) Удаление товара по артикулу.
+</pre>
+</body>
+
+<script>
+    
+</script>
+</html>
+
