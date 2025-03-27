@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class User {
+            constructor(name, age, role = "user") {
+                this.name = name
+                this.age = age
+                this.role = role
+            }
+
+            describe() {
+                console.log(" name: " + this.name + " age: " + this.age + " role: " + this.role)
+            }
+        }
+
+        class Admin extends User {
+            constructor(func, pass, session = "admin") {
+                this.func = func
+                this.pass  = pass 
+                this.session = session
+            }
+
+            deleteUser(user) {
+                console.log("User " + user.name + " deleted" + " by " + this.name)
+            }
+        }
+
+        class Moderator extends User {
+            constructor(categories, pass, users = "all") {
+                this.categories = categories
+                this.pass  = pass 
+                this.users = users
+            }
+
+            editUser(user, newName) {
+                user.name = newName;
+            }
+        }
+
+
+        // TASK 1
+        let user1 = new User("alkey", 22)
+        let user2= new Admin("baxa", 11, "admin", "clear server", "qwerty")
+        let user3 = new Moderator("dani", "moderator", 21, "strim", "qwerty")
+        let user4 = new User("niki", 22)
+        let user5= new Admin("baby", 11, "admin", "clear server", "qwerty")
+        let user6 = new Moderator("aldi", "moderator", 21, "strim", "qwerty")
+        let arrUser = [user1, user2, user3, user4, user5, user6]
+
+        function describeAll() {
+            for (let i = 0; i < arrUser.length; i++) {
+                arrUser[i].describe()
+            }
+        }
+
+        // TASK 2
+        // user2.deleteUser(user1);
+
+        // TASK 3
+        // user3.editUser(user1, "Alkey")
+
+        // TASK 4
+        // let adminCount = 0;
+        // let moderatorCount = 0;
+        // for (i of arrUser) {
+        //     if (i.role == "admin" && adminCount == 0) {
+        //         i.deleteUser(user2);
+        //         adminCount++
+        //     }
+        //     if (i.role == "moderator" && moderatorCount == 0) {
+        //         editUser(user1, "Alkey");
+        //         moderatorCount++
+        //     }
+        //     else [
+        //         i.describe()
+        //     ]
+        // }
+
+        // TASK 5
+        // class SuperAdmin extends Admin {
+        //     banUser(user) {
+        //         user.banned = true;
+        //     }
+        // }
+
+    </script>
+</body>
+</html>
