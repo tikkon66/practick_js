@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 task</title>
+</head>
+<style>
+
+    body {
+        background-color:rgb(219, 225, 236);
+        color: #272727;
+    }
+
+    .wrapper {
+        display: flex;
+        max-width: 1200px;
+        margin: auto;
+        gap: 2px;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 6px;
+    }
+
+    .find-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    button {
+        cursor: pointer;
+
+        min-height: 18px;
+        min-width: 18px;
+    }
+
+    .right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+    .div, .find-box {
+        display: flex;
+        gap: 1px;
+        padding: 1px;
+    }
+
+    .box, .div, .find-box > div, .div > div{
+        border: solid 1px #272727;
+    }
+
+    .find-box > div, .div > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .find-box {
+        display: none;
+    }
+
+    #window, #window-change {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        background-color: rgb(162, 190, 241);
+    }
+
+    .window-item {
+        position: relative;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #back, #change-back {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+
+</style>
+<body>
+    <div id="window">
+        <div class="window-item">
+            <strong id="back">X</strong>
+            <input class="product-input" type="number" placeholder="Артикул">
+            <input class="product-input" type="text" placeholder="Название">
+            <input class="product-input" type="number" placeholder="Цена">
+            <input class="product-input" type="number" placeholder="Кол-во">
+            <input class="product-input" type="text" placeholder="Фирма">
+            <input class="product-input" type="text" placeholder="Поставщик">
+            <button id="product-ready">Готово</button>
+        </div>
+    </div>
+    <div id="window-change">
+        <div class="window-item">
+            <strong id="change-back">X</strong>
+            <input class="change-input" type="number" placeholder="Артикул">
+            <input class="change-input" type="text" placeholder="Название">
+            <input class="change-input" type="number" placeholder="Цена">
+            <input class="change-input" type="number" placeholder="Кол-во">
+            <input class="change-input" type="text" placeholder="Фирма">
+            <input class="change-input" type="text" placeholder="Поставщик">
+            <button onclick="user.changeProduct()">Готово</button>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box left">
+            <div class="find-bar">
+                <input type="text" id="article" placeholder="артикул">
+                <button onclick="findByArticle()"></button>
+            </div>
+            <button onclick="user.showAllProduct()">вывод всех товаров</button>
+            <button onclick="openWindow(windowProduct)">добавить новый товар</button>
+            <button onclick="user.openChange()">изменить товар</button>
+            <button onclick="user.delete()">удалить удалить</button>
+            <button onclick="hideProducts()">очистить</button>
+        </div>
+        <div class="box right">
+            <div class="div"> 
+                <div>Артикул:</div><div>Название:</div><div>Цена:</div><div>Кол-во:</div><div>Фирма:</div><div>Поставщик:</div>
+            </div>
+            
+            <div class="find-box">
+                <div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div>
+            </div>
+
+            <div class="find-box">
+                <div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div>
+            </div>
+
+            <div class="find-box">
+                <div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div>
+            </div>
+
+            <div class="find-box">
+                <div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div>
+            </div>
+
+            <div class="find-box">
+                <div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div><div class="find"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let find = document.getElementsByClassName("find-box");
+    let finds = document.getElementsByClassName("find");
+    let right = document.getElementsByClassName("right");
+    let windowProduct = document.getElementById("window");
+    let back = document.getElementById("back");
+    let productReady = document.getElementById("product-ready");
+    let fon = document.getElementsByClassName("wrapper");
+    let newProductInput = document.getElementsByClassName("product-input");
+    let changeObject;
+    let changeBack = document.getElementById("change-back");
+    let changeReady = document.getElementById("change-ready");
+    let changeWindow = document.getElementById("window-change");
+    let newChangeInput = document.getElementsByClassName("change-input");
+    let ok, countMas;
+
+    class User {
+        products = [
+            {"Артикул": 1001,
+             "Название": "стол",
+             "Цена": 5000,
+             "Кол-во": 12,
+             "Фирма": "ikea",
+             "Поставщик": "BAITAQ",
+            },
+            {"Артикул": 1002,
+             "Название": "кроссовки",
+             "Цена": 10000,
+             "Кол-во": 15,
+             "Фирма": "nike",
+             "Поставщик": "Компания ОПТА",
+            },
+            {"Артикул": 1003,
+            "Название": "шкаф",
+             "Цена": 15000,
+             "Кол-во": 5,
+             "Фирма": "ikea",
+             "Поставщик": "Indigo Home Kazakhstan",
+            },
+            {"Артикул": 1004,
+                "Название": "шнуры",
+             "Цена": 500,
+             "Кол-во": 30,
+             "Фирма": "zeno",
+             "Поставщик": "E-Max Asia",
+            },
+            {"Артикул": 1005,
+             "Название": "клавиатура",
+             "Цена": 1000,
+             "Кол-во": 20,
+             "Фирма": "hp",
+             "Поставщик": "Specnah",
+            }
+        ]
+
+        // поиск товара
+        showProduct(num) {
+            hideProducts();
+
+            if (checkArticle(num)){
+                find[0].style.display = "flex";
+
+                finds[0].textContent = num;
+                finds[1].textContent = this.products[countMas]["Название"]
+                finds[2].textContent = this.products[countMas]["Цена"]
+                finds[3].textContent = this.products[countMas]["Кол-во"]
+                finds[4].textContent = this.products[countMas]["Фирма"]
+                finds[5].textContent = this.products[countMas]["Поставщик"]
+            }
+            else {
+                alert("Такого артикула нету!");
+            }
+
+        }
+
+        // вывод всех товаров
+        showAllProduct() {
+            openProducts()
+
+            let j = 0;
+            for (let i = 0; i < this.products.length;i++) {
+
+                finds[j].textContent = this.products[i]["Артикул"];
+                j++;
+                finds[j].textContent = this.products[i]["Название"]
+                j++;
+                finds[j].textContent = this.products[i]["Цена"]
+                j++;
+                finds[j].textContent = this.products[i]["Кол-во"]
+                j++;
+                finds[j].textContent = this.products[i]["Фирма"]
+                j++;
+                finds[j].textContent = this.products[i]["Поставщик"]
+                j++;
+
+            }
+        }
+
+        // добавить новый товар
+
+        addProduct() {
+            let newDiv = document.createElement("div");
+
+            newDiv.classList.add("find-box");
+            right[0].appendChild(newDiv);
+
+            for (let i = 0; i < 6; i++) {
+                let newChildDiv = document.createElement("div");
+                newChildDiv.classList.add("find");
+                newDiv.appendChild(newChildDiv);newProductInput
+            }
+
+            this.products.push({
+                "Артикул": newProductInput[0].value,
+                "Название": newProductInput[1].value,
+                "Цена": newProductInput[2].value,
+                "Кол-во": newProductInput[3].value,
+                "Фирма": newProductInput[4].value,
+                "Поставщик": newProductInput[5].value,
+            })
+    
+            hideWindow(windowProduct);
+            alert("Успешно добавлено!")
+        }
+
+
+        // изменить текущий
+        openChange() {
+            changeObject = +prompt("Артикул товара");
+
+            if(checkArticle(changeObject)) {
+                openWindow(changeWindow);
+            }
+            else{
+                alert("Такого артикула нету!")
+            }
+            
+        }
+
+        changeProduct() {
+            if (newChangeInput[0].value.trim() != ""){this.products[countMas]["Артикул"] = newChangeInput[0].value;}
+            if (newChangeInput[1].value.trim() != ""){this.products[countMas]["Название"] = newChangeInput[1].value;}
+            if (newChangeInput[2].value.trim() != ""){this.products[countMas]["Цена"] = newChangeInput[2].value;}
+            if (newChangeInput[3].value.trim() != ""){this.products[countMas]["Кол-во"] = newChangeInput[3].value;}
+            if (newChangeInput[4].value.trim() != ""){this.products[countMas]["Фирма"] = newChangeInput[4].value;}
+            if (newChangeInput[5].value.trim() != ""){this.products[countMas]["Поставщик"] = newChangeInput[5].value;}
+
+            hideWindow(changeWindow);
+            alert("Успешно изменен!");
+        }
+
+        // удалить текущий
+        delete() {
+            changeObject = +prompt("Артикул товара");
+
+            if(checkArticle(changeObject)) {
+                this.products.splice(countMas, 1);
+                find[find.length-1].remove();
+                alert("Успешно удaлен!")
+            }
+            else{
+                alert("Такого артикула нету!")
+            }
+            
+        }
+    }
+
+     // поиск товара
+    user = new User();
+
+    function findByArticle() {
+        user.showProduct(+(document.getElementById("article").value));
+    }
+
+    // видимость окнaМ
+    function openWindow(myWindow) {
+        myWindow.style.display = "block";
+        fon[0].style.pointerEvents = "none";
+        fon[0].style.filter = "brightness(0.7)"
+    }
+
+    function hideWindow(elem){
+        elem.style.display = "none";
+
+        fon[0].style.pointerEvents = "auto";
+        fon[0].style.filter = "brightness(1)"
+    }
+    back.addEventListener("click", function(event) {
+            hideWindow(windowProduct)
+    });
+    changeBack.addEventListener("click", function(event) {
+            hideWindow(changeWindow)
+    });
+
+    // document.addEventListener("click", function(event) {
+    //     const clickedElement = event.target;
+
+    //     if (!windowProduct.contains(clickedElement) && elem.style.display == "none") {
+
+    //     }
+        
+    // });
+
+
+    // видимость товара
+    function openProducts() {
+        for (let i = 0; i < find.length; i++) {
+                find[i].style.display = "flex";
+            }
+    }
+    function hideProducts() {
+        for (let i = 0; i < find.length; i++) {
+                find[i].style.display = "none";
+            }
+    }
+
+    // добавление товара
+    productReady.addEventListener("click", function(event) {
+        user.addProduct()
+    });
+
+    // искать артикул
+    function checkArticle(num) {
+        ok = false;
+        for (let i = 0; i < user.products.length && !ok; i++) {
+            if (user.products[i]["Артикул"] == +num) {
+                countMas = i;
+                return true;
+            }
+        }
+    }
+</script>
+</html>
