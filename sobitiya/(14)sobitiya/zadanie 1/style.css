@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 24px;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    height: 200px;
+    box-shadow: 0px 0px 20px 5px rgb(164, 164, 164);
+}
+
+button {
+    font-size: 18px;
+    margin-top: 24px;
+}
+
+#random-result {
+    font-size: 32px;
+    height: 12px;
+}

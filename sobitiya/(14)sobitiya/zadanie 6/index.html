@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progressbar">
+            <div class="progressbar-procent"></div>
+        </div>
+        <button id="addbar">Add 5 percent</button>
+    </div>
+
+    <script>
+        let progress = 0;
+        let progressBar = document.querySelector('.progressbar-procent');
+        let button = document.getElementById('addbar');
+
+        button.onclick = function() {
+            if (progress < 100) {
+                progress += 5;
+                progressBar.style.width = progress + '%';
+            }
+        };
+    </script>
+</body>
+</html>

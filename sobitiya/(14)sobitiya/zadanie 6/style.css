@@ -1,0 +1,44 @@
+body {
+    width: 100wh;
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    background-color: rgb(198, 204, 210);
+    height: 200px;
+    gap: 10px;
+}
+
+.progressbar {
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.progressbar-procent {
+    height: 100%;
+    width: 0%;
+    background-color: rgb(63, 130, 202);
+    transition: width 0.3s ease;
+}

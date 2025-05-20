@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <ul class="menu">
+    <li>
+      <span class="menu-1">Home</span>
+      <ul class="submenu">
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+      </ul>
+    </li>
+    <li>
+      <span class="menu-1">Categories</span>
+      <ul class="submenu">
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+      </ul>
+    </li>
+    <li>
+      <span class="menu-1">About</span>
+      <ul class="submenu">
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+      </ul>
+    </li>
+    <li>
+      <span class="menu-1">Contact</span>
+      <ul class="submenu">
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+        <li><span>qwerty</span></li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    let menu = document.querySelectorAll('.menu-1')
+
+    for (let i = 0; i < menu.length; i++) {
+      menu[i].onclick = function () {
+        let clicked = this.closest('li');
+        clicked.classList.toggle('active');
+      }
+    }
+
+    document.body.style.userSelect = "none"
+  </script>
+
+</body>
+
+</html>

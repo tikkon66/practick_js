@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="block">
+        <div class="container">
+            <div class="img"><img width="600px" height="350px" src="./hp-block-conf-upd.jpg" alt=""></div>
+            <p class="question">1) Какое животное на картине?</p>
+            <div class="answers">
+                <div class="answer">
+                    <input type="radio" name="answer1" id="answer1" value="1">
+                    <label for="answer1">олень</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer1" id="answer2" value="0">
+                    <label for="answer2">лев</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer1" id="answer3" value="0">
+                    <label for="answer3">кот</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer1" id="answer4" value="0">
+                    <label for="answer4">тигр</label>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="img"><img width="600px" height="350px" src="./hp-block-in-stock.jpg" alt=""></div>
+            <p class="question">2) Какое животное на картине?</p>
+            <div class="answers">
+                <div class="answer">
+                    <input type="radio" name="answer2" id="answer1" value="0">
+                    <label for="answer1">тигр</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer2" id="answer2" value="1">
+                    <label for="answer2">лев</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer2" id="answer3" value="0">
+                    <label for="answer3">олень</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer2" id="answer4" value="0">
+                    <label for="answer4">кот</label>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="img"><img width="600px" height="350px" src="./hpc-upgrade-trade-in.jpg" alt=""></div>
+            <p class="question">3)  Какое животное на картине?</p>
+            <div class="answers">
+                <div class="answer">
+                    <input type="radio" name="answer3" id="answer1" value="0">
+                    <label for="answer1">олень</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer3" id="answer2" value="0">
+                    <label for="answer2">лев</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer3" id="answer3" value="1">
+                    <label for="answer3">тигр</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer3" id="answer4" value="0">
+                    <label for="answer4">кот</label>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="img"><img width="600px" height="350px" src="./hp-block-conf.jpg" alt=""></div>
+            <p class="question">4) Какое животное на картине?</p>
+            <div class="answers">
+                <div class="answer">
+                    <input type="radio" name="answer4" id="answer1" value="0">
+                    <label for="answer1">тигр</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer4" id="answer2" value="0">
+                    <label for="answer2">лев</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer4" id="answer3" value="0">
+                    <label for="answer3">олень</label>
+                </div>
+                <div class="answer">
+                    <input type="radio" name="answer4" id="answer4" value="1">
+                    <label for="answer4">кот</label>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="button" onclick="calculateResult()">Ответить</button>
+        
+        <div class="block-result">
+            <div class="text-result">Результаты:</div>
+            <p>Правильных ответов: <span id="true-answer"></span></p>
+            <p>Процент правильных ответов: <span id="procent-true-answer"></span></p>
+            <p>Оценка: <span id="grade-answer"></span></p>
+        </div>
+    </div>
+    <script>
+        function calculateResult() {
+            let answers = document.getElementsByTagName('input');
+            let correctanswers = 0;
+
+            for (let i = 0; i < answers.length; i++) {
+
+                if (answers[i].checked && answers[i].value == "1") {
+                    correctanswers++;
+                }
+            }
+
+            let totalanswers = 4;
+            let percentage = (correctanswers / totalanswers) * 100;
+
+            document.getElementById('true-answer').textContent = correctanswers + '/4';
+            document.getElementById('procent-true-answer').textContent = percentage + '%';
+
+            let grade = 0;
+            if (percentage >= 90) {
+                grade = 5;
+            } else if (percentage >= 75) {
+                grade = 4;
+            } else if (percentage >= 50) {
+                grade = 3;
+            } else {
+                grade = 2;
+            }
+            document.getElementById('grade-answer').textContent = grade;
+
+        }
+        
+
+
+        
+      
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="block">
+        <button id="btnclick">Hide / show text</button>
+        <div id="text">
+            Это текст, который будет скрываться и отображаться.
+            Это текст, который будет скрываться и отображаться.
+            Это текст, который будет скрываться и отображаться.
+            Это текст, который будет скрываться и отображаться.
+            Это текст, который будет скрываться и отображаться.
+            Это текст, который будет скрываться и отображаться.
+            Это текст, который будет скрываться и отображаться.
+        </div>
+    </div>
+    
+    <script>
+        const button = document.getElementById('btnclick');
+        const text = document.getElementById('text');
+
+        button.onclick = function () {
+            if (text.style.display === 'none') {
+                text.style.display = 'block';
+            } else {
+
+                text.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

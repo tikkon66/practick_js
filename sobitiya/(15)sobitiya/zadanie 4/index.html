@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="articles">
+            <div class="article">
+                <h2>What is Lorem Lorem Ipsum?</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It hassurvived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged, It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <hr>
+        </div>
+
+        <div class="comment-block">
+            <div id="comments">
+                <div class="comment">
+                    <div class="comment-name">Antoine</div>
+                    <div class="comment-date">22.03.2018</div>
+                    <div class="comment-text">Best comment from Antoine!</div>
+                    <hr>
+                </div>
+            </div>
+
+            <h4>Leave you comment</h4>
+            <form id="commentform">
+                <label>Name:</label>
+                <input type="text" id="name" required><br>
+                <label>Comment:</label><br>
+                <textarea id="comment" rows="4" required></textarea><br>
+                <button type="submit" id="btnstyle">Add comment</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('commentform').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById('name').value.trim();
+            let comment = document.getElementById('comment').value.trim();
+
+            if (name && comment) {
+                let commentBlock = document.createElement('div');
+                commentBlock.classList.add('comment');
+
+                let today = new Date();
+                let date = today.toLocaleDateString();
+
+                let nameDiv = document.createElement('div');
+                nameDiv.className = 'comment-name';
+                nameDiv.textContent = name;
+
+                let dateDiv = document.createElement('div');
+                dateDiv.className = 'comment-date';
+                dateDiv.textContent = date;
+
+                let commentDiv = document.createElement('div');
+                commentDiv.className = 'comment-text';
+                commentDiv.textContent = comment;
+
+                let hr = document.createElement('hr');
+
+                commentBlock.appendChild(nameDiv);
+                commentBlock.appendChild(dateDiv);
+                commentBlock.appendChild(commentDiv);
+                commentBlock.appendChild(hr);
+
+                document.getElementById('comments').appendChild(commentBlock);
+
+                document.getElementById('commentform').reset();
+            }
+        });
+    </script>
+</body>
+
+</html>

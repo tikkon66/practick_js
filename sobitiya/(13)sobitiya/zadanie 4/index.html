@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" id="display">
+            <table>
+                <tr>
+                    <td onclick="append('7')">7</td>
+                    <td onclick="append('8')">8</td>
+                    <td onclick="append('9')">9</td>
+                    <td onclick="append('+')">+</td>
+                </tr>
+                <tr>
+                    <td onclick="append('4')">4</td>
+                    <td onclick="append('5')">5</td>
+                    <td onclick="append('6')">6</td>
+                    <td onclick="append('-')">-</td>
+                </tr>
+                <tr>
+                    <td onclick="append('1')">1</td>
+                    <td onclick="append('2')">2</td>
+                    <td onclick="append('3')">3</td>
+                    <td onclick="append('*')">*</td>
+                </tr>
+                <tr>
+                    <td onclick="append('0')">0</td>
+                    <td onclick="calculate()" colspan="2">=</td>
+                    <td onclick="append('/')">/</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        function append(value) {
+            let display = document.getElementById("display");
+            display.value += value;
+        }
+
+        function calculate() {
+            let expr = document.getElementById("display").value;
+            let num1 = "";
+            let num2 = "";
+            let operator = "";
+            let result = "";
+            let i = 0;
+
+            for (; i < expr.length; i++) {
+                if (expr[i] >= '0' && expr[i] <= '9') {
+                    num1 += expr[i];
+                } else {
+                    break;
+                }
+            }
+
+            if (i < expr.length && (expr[i] === '+' || expr[i] === '-' || expr[i] === '*' || expr[i] === '/')) {
+                operator = expr[i];
+                i++;
+            } else {
+                document.getElementById("display").value = "NaN";
+                return;
+            }
+
+            for (; i < expr.length; i++) {
+                if (expr[i] >= '0' && expr[i] <= '9') {
+                    num2 += expr[i];
+                } else {
+                    document.getElementById("display").value = "NaN";
+                    return;
+                }
+            }
+
+            if (num1 === "" || num2 === "") {
+                document.getElementById("display").value = "NaN";
+                return;
+            }
+
+            let a = +(num1);
+            let b = +(num2);
+
+            if (operator === '+') {
+                result = a + b;
+            } else if (operator === '-') {
+                result = a - b;
+            } else if (operator === '*') {
+                result = a * b;
+            } else if (operator === '/') {
+                if (b === 0) {
+                    result = "NaN";
+                } else {
+                    result = a / b;
+                }
+            }
+
+            document.getElementById("display").value = num1 + " " + operator + " " + num2 + " = " + result;
+        }
+
+
+    </script>
+</body>
+
+</html>

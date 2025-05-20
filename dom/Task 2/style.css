@@ -1,0 +1,84 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-image: url(./hp-block-in-stock.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(220, 228, 231);
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 550px;
+    background-color: rgb(160, 160, 160, 0.8);
+    border: 1px solid black;
+}
+
+button {
+    background-color: white;
+    border-radius: 15px;
+    height: 60px;
+    width: 120px;
+    font-size: 35px;
+}
+
+.block {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vibor {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.vibori {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#clear {
+    width: 260px;
+    position: relative;
+    top: 10px;
+    
+}
+
+.vivod {
+    text-align: center;
+    height: 90px;
+    font-size: 50px;
+    color: rgb(236, 26, 26);
+}
+
+.zadan-vivod {
+    width: 32px;
+    height: 32px;
+    font-size: 30px;
+}
+
+input {
+    width: 120px;
+    height: 36px;
+    font-size: 24px;
+}
+
+.zadat {
+    display: flex;
+    justify-content: center;
+}
+
+.zadan-vivod {
+    text-align: center;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="block">
+            <input type="text" id="country" placeholder="...">
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+    </div>
+
+
+    <script>
+        let countries = [
+            "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
+            "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia",
+            "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon",
+            "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica",
+            "Croatia", "Cuba", "Cyprus", "Czech Republic"
+        ];
+
+        let input = document.getElementById('country')
+        let suggestions = document.getElementById('suggestions')
+
+        input.addEventListener('input', () => {
+            let value = input.value.trim().toLowerCase()
+            suggestions.innerHTML = ''
+
+            if (value !== '') {
+                let filtered = countries.filter(country =>
+                    country.toLowerCase().startsWith(value)
+                ).slice(0, 10)
+
+                filtered.forEach(country => {
+                    let item = document.createElement('div')
+                    item.classList.add('suggestion-item')
+                    suggestions.classList.add('onnn')
+                    if (country.toLowerCase() === value) {
+                        item.classList.add('selected')
+                    }
+                    item.textContent = country
+                    item.addEventListener('click', () => {
+                        input.value = country
+                        suggestions.innerHTML = ''
+                        suggestions.classList.remove('onnn')
+                    })
+                    suggestions.appendChild(item)
+                })
+            }
+        })
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.autocomplete')) {
+                suggestions.innerHTML = ''
+                suggestions.classList.remove('onnn')
+            }
+        });
+    </script>
+
+</body>
+
+</html>

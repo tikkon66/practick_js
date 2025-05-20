@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100wh;
+    margin: 0;
+    height: 100vh;
+    font-size: 24px;
+}
+
+.block {
+    width: 600px;
+    height: 300px;
+}
+
+button {
+    font-size: 24px;
+}
+
+#text {
+    max-width: 550px;
+    margin-top: 20px;
+}

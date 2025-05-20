@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="logo">
+            ◌
+            litmus
+        </div>
+        <h1>
+            Headline
+        </h1>
+        <p class="p1 gray-text">Intro paragraph - srfesrzdtyujhk sghsgtsjudtj sgsg ry edsfghjudjh sysysyt etset sgt
+            sgsdg sdgdsgsd
+            gsdgsdg
+
+        </p>
+        <div class="image" id="image-ram">
+        </div>
+        <h2>
+            Secondary headline
+        </h2>
+        <p class="p2 gray-text">
+            kja tjtewtjweutjwiu juetjweut jweut utjweuit jweuitweuitj weuit wuetwetuwetuiwetiwtniwetiuwen tiwent
+            iwentriwetniwentijweti dfgdfgdfgdfg dfdf dfgfdgfdg sagshfhfdhfdhdf
+        </p>
+        <div class="buttons">
+            <div class="button" id="btn1">Start your trial</div>
+            <div class="button" id="btn2">Start your trial</div>
+        </div>
+        <div class="nav-texts">
+            <div class="nav-text">
+                <div class="circle"></div>
+                <p> <b>dsiodjgti jies ysdroiyjioesjiyhsoihyds jdsfihjdsfioh</b> </p>
+                <p class="gray-text"> dsiodjgti jies ysdroiyjioesjiyhsoihyds jdsfihjdsfioh sghdfdujfdhr tjdfyjtdhdr
+                    drsyh sdryh </p>
+            </div>
+
+            <div class="nav-text">
+                <div class="circle"></div>
+                <p> <b>dsiodjgti jies ysdroiyjioesjiyhsoihyds jdsfihjdsfioh</b> </p>
+                <p class="gray-text"> dsiodjgti jies ysdroiyjioesjiyhsoihyds jdsfihjdsfioh sghdfdujfdhr tjdfyjtdhdr
+                    drsyh sdryh dfshg dfh
+                    dfhdfhfdhdfhsfdhdhs jrtjsjt r jrdj fj fdjfgxjfgjgfjgj </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="about-me">
+            <div class="photo"></div>
+            <div class="text">
+                <p> <em>"sdgsdgsudfsgshsdnug ojauo aerwuiyjhaug tjaweriyjeo jiroe jyraejy irejirjyiroerji jih erijh
+                        drijoh rejihriajrehjea5 85yu8903 gir jaer ireaiopgier hioerh ierahiop ahreijh aejirhiaerh
+                        hiejihajeioherioh erioh eriho rj hiorewjh ijh rweijhiohjpehjipehiseh tds
+                        hdsfkjhdfjhdfjlkhdfjhdfkl hdkfh djkf hd dlhdfhd"</em> </p>
+                <p> <b>Adlet Abildinov, super DED specialist, topchik</b> </p>
+            </div>
+        </div>
+        <div class="more" id="div-mode">
+            <div class="icon"></div>
+            <div class="geo">
+                544 sdgfhjfgjfgjgjdj sghs,qwerty, sdh534634,KZ View online
+            </div>
+            <div class="bla">
+                reteuetgueateueuirgueir eugeruigerhugrue h eurry7ru ru yhruur rurughuefsdgd ndvdygdsfsuhgurh uty
+                rtyutudhudb njdhsdf tgheeh ytyiututoyoriejgbhffsdthwef sgshg sfhgshshhshgfsdhgdf
+            </div>
+        </div>
+    </footer>
+    <button class="light-dark-mode-btn" id="theme-toggle">
+    </button>
+    <script>
+        let button = document.getElementById('theme-toggle');
+        let div = document.getElementById('div-mode');
+        let imageram = document.getElementById('image-ram')
+        let body = document.body;
+
+        if (body.classList.contains('dark-theme')) {
+            body.classList.add('dark-theme');
+            body.classList.remove('light-theme');
+            button.classList.add('btn-mode-dark');
+            button.classList.remove('btn-mode-light');
+            div.classList.add('dark-footer');
+            div.classList.remove('light-footer');
+            imageram.classList.add('imageram-in-dark-mode')
+            button.textContent = 'Light Mode';
+        } else {
+            body.classList.add('light-theme');
+            body.classList.remove('dark-theme');
+            button.classList.add('btn-mode-light');
+            button.classList.remove('btn-mode-dark');
+            div.classList.add('light-footer');
+            div.classList.remove('dark-footer');
+            imageram.classList.remove('imageram-in-dark-mode') 
+            button.textContent = 'Dark Mode';
+        }
+
+        button.addEventListener('click', () => {
+
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme');
+
+            button.classList.toggle('btn-mode-dark');
+            button.classList.toggle('btn-mode-light');
+
+            div.classList.toggle('dark-footer');
+            div.classList.toggle('light-footer');
+
+            imageram.classList.toggle('imageram-in-dark-mode') 
+
+            if (body.classList.contains('dark-theme')) {
+                button.textContent = 'Light Mode';
+
+            } else {
+                button.textContent = 'Dark Mode';
+                
+            }
+        });
+    </script>
+</body>
+
+</html>

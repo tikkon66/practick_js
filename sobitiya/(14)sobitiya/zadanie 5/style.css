@@ -1,0 +1,36 @@
+body {
+    width: 100wh;
+    height: 100vh;
+    font-family: sans-serif;
+    align-items: center;
+    font-size: 18px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    border: 1px solid gray;
+    width: 1050px;
+    height: 95%;
+}
+
+
+
+.newsnav {
+    width: 1000px;
+    height: 150px;
+    padding: 24px;
+}
+
+.hr {
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+button {
+    position: relative;
+    top: -133px;
+    right: -900px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="block">
+        <div id="cord"></div>
+        <div id="clickinfo"><div>
+    </div>
+
+    <script>
+        let cordmouse = document.getElementById('cord');
+        let clickmouse = document.getElementById('clickinfo');
+
+        document.getElementById('block').addEventListener('mousemove', function(event) {
+            let x = event.clientX;
+            let y = event.clientY;
+            cordmouse.textContent = `X = ${x}, Y = ${y}`;
+        });
+
+        document.getElementById('block').addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener('mousedown', function(e){
+            if (e.button === 2){
+                clickmouse.textContent = 'Правая кнопка мыши нажата';
+            }
+        });
+        document.addEventListener('mousedown', function(e){
+            if (e.button === 0){
+                clickmouse.textContent = 'Левая кнопка мыши нажата';
+            }
+        });
+
+    </script>
+</body>
+</html>

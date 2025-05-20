@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="newsnav">
+            <h2>W ble ble ble blu blu blu?</h2>
+            <p>snvwuih wh 2 42fh2 h 2h974hg4h4gh3 ghrghw8gh3g 348gh 78h7h 7h2 7h248g 34h3hg4378ggg gh
+                h2278h27hf287hf2784hg2h4gerbhe7g385er 4gn8438erbbg73489g43h g3 4437 8g 348g78 34bg78 8ghberg
+                78gherbg75her g78b4 herbg ew88 ntrehb8trreb88nrtr behhtrinob r5herg7herbehrhhberrgyhtbretbher 75the
+                r8hrtbrer8rt</p>
+            <div class="hr"></div>
+            <button class="btndelete">X [remove]</button>
+        </div>
+        <div class="newsnav">
+            <h2>W ble ble ble blu blu blu?</h2>
+            <p>snvwuih wh 2 42fh2 h 2h974hg4h4gh3 ghrghw8gh3g 348gh 78h7h 7h2 7h248g 34h3hg4378ggg gh
+                h2278h27hf287hf2784hg2h4gerbhe7g385er 4gn8438erbbg73489g43h g3 4437 8g 348g78 34bg78 8ghberg
+                78gherbg75her g78b4 herbg ew88 ntrehb8trreb88nrtr behhtrinob r5herg7herbehrhhberrgyhtbretbher 75the
+                r8hrtbrer8rt</p>
+            <div class="hr"></div>
+            <button class="btndelete">X [remove]</button>
+        </div>
+        <div class="newsnav">
+            <h2>W ble ble ble blu blu blu?</h2>
+            <p>snvwuih wh 2 42fh2 h 2h974hg4h4gh3 ghrghw8gh3g 348gh 78h7h 7h2 7h248g 34h3hg4378ggg gh
+                h2278h27hf287hf2784hg2h4gerbhe7g385er 4gn8438erbbg73489g43h g3 4437 8g 348g78 34bg78 8ghberg
+                78gherbg75her g78b4 herbg ew88 ntrehb8trreb88nrtr behhtrinob r5herg7herbehrhhberrgyhtbretbher 75the
+                r8hrtbrer8rt</p>
+            <div class="hr"></div>
+            <button class="btndelete">X [remove]</button>
+        </div>
+    </div>
+
+
+    <script>
+        let news = document.getElementsByClassName('newsnav')
+        let btn = document.querySelectorAll('.btndelete')
+
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                let newsdel = btn[i].closest('.newsnav')
+                    newsdel.remove()
+            }
+        }
+
+    </script>
+</body>
+
+</html>

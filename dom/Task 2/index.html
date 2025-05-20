@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="block">
+            <div class="zadat">
+                <input type="number" id="num1">
+                <div class="zadan-vivod" id="zadan-vivod"></div>
+                <input type="number" id="num2">
+            </div>
+
+            <div class="vivod" id="vivod"></div>
+            <div class="vibori">
+                <div class="vibor">
+                    <button id="plus">+</button>
+                    <button id="minus">-</button>
+                </div>
+                <div class="vibor">
+                    <button id="multiplication">*</button>
+                    <button id="division">/</button>
+                </div>
+            </div>
+            <button id="clear">Очистить</button>
+        </div>
+    </div>
+
+    </div>
+    <script>
+        let num1Input = document.getElementById('num1');
+        let num2Input = document.getElementById('num2');
+
+        let plus = document.getElementById('plus');
+        let minus = document.getElementById('minus');
+        let multiplication = document.getElementById('multiplication');
+        let division = document.getElementById('division');
+
+        let clear = document.getElementById('clear')
+
+        let vivod = document.getElementById('vivod');
+        let viborvivod = document.getElementById('zadan-vivod');
+
+        plus.onclick = function () {
+
+            let num1 = +(num1Input.value);
+            let num2 = +(num2Input.value);
+            if (num1 === 0 && num2 === 0) {
+                vivod.textContent = 'Введи числа'
+            }
+            else {
+                vivod.textContent = num1 + num2;
+                viborvivod.textContent = '+';
+            }
+
+        };
+
+        minus.onclick = function () {
+
+            let num1 = +(num1Input.value);
+            let num2 = +(num2Input.value);
+
+            if (num1 === 0 && num2 === 0) {
+                vivod.textContent = 'Введи числа'
+            }
+            else {
+                vivod.textContent = num1 - num2;
+                viborvivod.textContent = '-';
+            }
+        };
+
+        multiplication.onclick = function () {
+
+            let num1 = +(num1Input.value);
+            let num2 = +(num2Input.value);
+
+            if (num1 === 0 && num2 === 0) {
+                vivod.textContent = 'Введи числа'
+            }
+            else {
+                vivod.textContent = num1 * num2;
+                viborvivod.textContent = '*';
+            }
+        };
+
+        division.onclick = function () {
+
+            let num1 = +(num1Input.value);
+            let num2 = +(num2Input.value);
+            if (num1 === 0 && num2 === 0) {
+                vivod.textContent = 'Введи числа'
+            }
+            else if (num2 === 0) {
+                vivod.textContent = '0'
+                viborvivod.textContent = '/';
+            }
+            
+            else {
+                vivod.textContent = num1 / num2;
+                viborvivod.textContent = '/';
+            }
+
+        };
+
+        clear.onclick = function () {
+
+            num1.value = '';
+            num2.value = '';
+
+            vivod.textContent = '';
+            viborvivod.textContent = '';
+        };
+    </script>
+</body>
+
+</html>

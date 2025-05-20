@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cont">
+        <div id="container"></div>
+        <button id="addbtn">Add block</button>
+    </div>
+
+
+    <script>
+        let addBtn = document.getElementById('addbtn');
+        let container = document.getElementById('container');
+
+        function color() {
+            let color = Math.floor(Math.random() * 16777215).toString(16);
+            return '#' + color.padStart(6, '0');
+        }
+
+        addBtn.onclick = function () {
+            let block = document.createElement('div');
+            block.className = 'block';
+            block.style.backgroundColor = color();
+
+            block.onclick = function () {
+                container.removeChild(block);
+            };
+
+            container.appendChild(block);
+        };
+    </script>
+
+</body>
+
+</html>

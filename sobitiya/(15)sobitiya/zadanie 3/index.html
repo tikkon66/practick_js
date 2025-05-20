@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="palette">
+        <div class="color-block" data-color="#1abc9c" style="background-color: #1abc9c;"></div>
+        <div class="color-block" data-color="#2ecc71" style="background-color: #2ecc71;"></div>
+        <div class="color-block" data-color="#3498db" style="background-color: #3498db;"></div>
+        <div class="color-block" data-color="#9b59b6" style="background-color: #9b59b6;"></div>
+        <div class="color-block" data-color="#34495e" style="background-color: #34495e;"></div>
+        <div class="color-block" data-color="#16a085" style="background-color: #16a085;"></div>
+        <div class="color-block" data-color="#27ae60" style="background-color: #27ae60;"></div>
+        <div class="color-block" data-color="#2980b9" style="background-color: #2980b9;"></div>
+        <div class="color-block" data-color="#8e44ad" style="background-color: #8e44ad;"></div>
+        <div class="color-block" data-color="#2c3e50" style="background-color: #2c3e50;"></div>
+        <div class="color-block" data-color="#f1c40f" style="background-color: #f1c40f;"></div>
+        <div class="color-block" data-color="#e67e22" style="background-color: #e67e22;"></div>
+        <div class="color-block" data-color="#e74c3c" style="background-color: #e74c3c;"></div>
+        <div class="color-block" data-color="#ecf0f1" style="background-color: #ecf0f1;"></div>
+        <div class="color-block" data-color="#95a5a6" style="background-color: #95a5a6;"></div>
+        <div class="color-block" data-color="#f39c12" style="background-color: #f39c12;"></div>
+        <div class="color-block" data-color="#d35400" style="background-color: #d35400;"></div>
+        <div class="color-block" data-color="#c0392b" style="background-color: #c0392b;"></div>
+    </div>
+
+    <div id="text">8к3еупгацп к2р3еупг ре3пи а82ре39п8р2а ре3п2тег3пуе3ипт90и38е тп3е тпу8тпу8е3тп83е9пу 89е9пу8
+        и3тп8иу3е4ипу3еип83ип38п 48 938п38п4птп84384ри п83е984ип8 3ео9р4рпу8р ц3е9р8ипу 8р3ео984пу 83ео984нрп о3е8 83е
+        83 е4пе3н4888 е394нрпуео 394нркпу е9о3н4р8упр е9о34нкрпу 8е9г4нкрп е9нкрпу 8е9нкрпуенкр пууе4ншкр 8у4нкрп у8е уе
+        4нуп8 енуп83е 9у 8 3ещу88 3е9уп е3м8щуе8м3тщ е8у8ткг3ме 8тщм358 8у8щ3м8е тг8т83егу8е8тмгу8п8егм гуем4н крг щщ
+    </div>
+
+    <script>
+        let text = document.getElementById('text');
+        let cells = document.getElementsByClassName('color-block');
+
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].onclick = function () {
+                let color = this.getAttribute('data-color');
+                text.style.color = color;
+            };
+        }
+    </script>
+
+</body>
+
+</html>
