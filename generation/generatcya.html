@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <body>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 100vh;
+        background-color: #21c0ff;
+    }
+
+    .card {
+        width: 600px;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        box-shadow: 5px 5px 10px 0px;
+    }
+
+    .card2 {
+        height: 200px;
+        background-color: rgb(36, 114, 20);
+        position: relative;
+        background: url(dsrg.jpeg) center/cover;
+    }
+
+    .ava {
+        background: url(1212.jpeg);
+        background-size: 100% 100%;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -60px;
+        box-shadow: 0 0 5px 5px #4e4e4e;
+        left: 38%;
+    }
+
+    .card3 {
+        padding: 70px 20px 20px;
+    }
+
+    .name {
+        color: rgb(190, 82, 187);
+        font-weight: bold;
+        font-family: sans-serif;
+        font-size: 30px;
+    }
+
+    .text1 {
+        color: rgb(104, 104, 104);
+        line-height: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+
+    .socc {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .socc a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    .twitter {
+        background-image: url(145812.png);
+        background-size: 100% 100%;
+    }
+
+    .google {
+        background-image: url(44646.png);
+        background-size: 100% 100%;
+    }
+
+    .facebook {
+        background-image: url(145799.png);
+        background-size: 100% 100%;
+    }
+
+    .behance {
+        background-image: url(16509564.png);
+        background-size: 100% 100%;
+    }
+</style>
+</body>
+
+<script>
+    let card = document.createElement("div");
+    card.className = "card";
+
+    let header = document.createElement("div");
+    header.className = "card2";
+
+    let ava = document.createElement("img");
+    ava.className = "ava";
+
+    let body = document.createElement("div");
+    body.className = "card3";
+
+    let name = document.createElement("div");
+    name.className = "name";
+    name.textContent = "";
+
+    let desc1 = document.createElement("div");
+    desc1.className = "text1";
+    desc1.textContent = "Passionate designer";
+
+    let desc2 = document.createElement("div");
+    desc2.className = "text1";
+    desc2.textContent = "Curious developer";
+
+    let desc3 = document.createElement("div");
+    desc3.className = "text1";
+    desc3.textContent = "Tech geek";
+
+    let socialIcons = document.createElement("div");
+    socialIcons.className = "socc";
+
+    let icons = [
+        { class: "twitter" },
+        { class: "google" },
+        { class: "facebook" },
+        { class: "behance" },
+    ];
+    for (let i = 0; i < icons.length; i++) {
+        let { class: cls, icon, link } = icons[i];
+        let a = document.createElement("a");
+        a.className = cls;
+        a.textContent = icon;
+        socialIcons.appendChild(a);
+    }
+
+
+    header.appendChild(ava);
+    body.append(name, desc1, desc2, desc3, socialIcons);
+    card.append(header, body);
+    document.body.appendChild(card);
+</script>
+</html>
